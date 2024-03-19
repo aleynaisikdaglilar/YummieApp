@@ -17,6 +17,15 @@
 		EC2DD9922B4C3065005D72DA /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2DD9912B4C3065005D72DA /* OnboardingCollectionViewCell.swift */; };
 		EC2DD9942B4D602C005D72DA /* OnboardingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2DD9932B4D602C005D72DA /* OnboardingDataModel.swift */; };
 		EC40A2ED2B64600000B38411 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC40A2EC2B64600000B38411 /* UIView+Extensions.swift */; };
+		EC68F6662BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC68F6642BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.swift */; };
+		EC68F6672BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC68F6652BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.xib */; };
+		EC68F66B2BA0FC8100BD5297 /* PopularDishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC68F66A2BA0FC8100BD5297 /* PopularDishDetailViewController.swift */; };
+		ECED05BB2B8CB0CB006C8491 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED05BA2B8CB0CB006C8491 /* HomeViewController.swift */; };
+		ECED05C12B91C6F5006C8491 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED05BF2B91C6F5006C8491 /* CategoryCollectionViewCell.swift */; };
+		ECED05C22B91C6F5006C8491 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECED05C02B91C6F5006C8491 /* CategoryCollectionViewCell.xib */; };
+		ECED05C62B94F833006C8491 /* PopularDishesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED05C42B94F833006C8491 /* PopularDishesCollectionViewCell.swift */; };
+		ECED05C72B94F833006C8491 /* PopularDishesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECED05C52B94F833006C8491 /* PopularDishesCollectionViewCell.xib */; };
+		ECF42D612B7B703100A3CF63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ECF42D602B7B703100A3CF63 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +41,15 @@
 		EC2DD9912B4C3065005D72DA /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC2DD9932B4D602C005D72DA /* OnboardingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDataModel.swift; sourceTree = "<group>"; };
 		EC40A2EC2B64600000B38411 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		EC68F6642BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefsSpecialsCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC68F6652BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChefsSpecialsCollectionViewCell.xib; sourceTree = "<group>"; };
+		EC68F66A2BA0FC8100BD5297 /* PopularDishDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDishDetailViewController.swift; sourceTree = "<group>"; };
+		ECED05BA2B8CB0CB006C8491 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		ECED05BF2B91C6F5006C8491 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		ECED05C02B91C6F5006C8491 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		ECED05C42B94F833006C8491 /* PopularDishesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDishesCollectionViewCell.swift; sourceTree = "<group>"; };
+		ECED05C52B94F833006C8491 /* PopularDishesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularDishesCollectionViewCell.xib; sourceTree = "<group>"; };
+		ECF42D602B7B703100A3CF63 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +82,8 @@
 		EC032A722B3AF0A3005CFB5F /* Yummie */ = {
 			isa = PBXGroup;
 			children = (
+				ECED05BC2B8CB954006C8491 /* Home */,
+				ECF42D5F2B7B701F00A3CF63 /* Localizable */,
 				EC40A2EB2B645FD100B38411 /* Extensions */,
 				EC032A8A2B434509005CFB5F /* CustomViews */,
 				EC032A882B4344EE005CFB5F /* Views */,
@@ -90,6 +110,7 @@
 		EC032A882B4344EE005CFB5F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EC68F6682BA0FC3900BD5297 /* PopularDishDetail */,
 				EC032A8B2B43451E005CFB5F /* Onboarding */,
 			);
 			path = Views;
@@ -98,6 +119,7 @@
 		EC032A8A2B434509005CFB5F /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				ECED05BD2B91C681006C8491 /* CollectionViewCell */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -117,6 +139,67 @@
 				EC40A2EC2B64600000B38411 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EC68F6612BA0959300BD5297 /* ChefsSpecialsCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EC68F6642BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.swift */,
+				EC68F6652BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.xib */,
+			);
+			path = ChefsSpecialsCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		EC68F6682BA0FC3900BD5297 /* PopularDishDetail */ = {
+			isa = PBXGroup;
+			children = (
+				EC68F66A2BA0FC8100BD5297 /* PopularDishDetailViewController.swift */,
+			);
+			path = PopularDishDetail;
+			sourceTree = "<group>";
+		};
+		ECED05BC2B8CB954006C8491 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				ECED05BA2B8CB0CB006C8491 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		ECED05BD2B91C681006C8491 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EC68F6612BA0959300BD5297 /* ChefsSpecialsCollectionViewCell */,
+				ECED05C32B94F809006C8491 /* PopularDishesCollectionViewCell */,
+				ECED05BE2B91C6BA006C8491 /* CategoryCollectionViewCell */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		ECED05BE2B91C6BA006C8491 /* CategoryCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				ECED05BF2B91C6F5006C8491 /* CategoryCollectionViewCell.swift */,
+				ECED05C02B91C6F5006C8491 /* CategoryCollectionViewCell.xib */,
+			);
+			path = CategoryCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		ECED05C32B94F809006C8491 /* PopularDishesCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				ECED05C42B94F833006C8491 /* PopularDishesCollectionViewCell.swift */,
+				ECED05C52B94F833006C8491 /* PopularDishesCollectionViewCell.xib */,
+			);
+			path = PopularDishesCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		ECF42D5F2B7B701F00A3CF63 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				ECF42D602B7B703100A3CF63 /* Localizable.strings */,
+			);
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +261,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC032A802B3AF0A7005CFB5F /* LaunchScreen.storyboard in Resources */,
+				ECED05C72B94F833006C8491 /* PopularDishesCollectionViewCell.xib in Resources */,
+				ECED05C22B91C6F5006C8491 /* CategoryCollectionViewCell.xib in Resources */,
+				ECF42D612B7B703100A3CF63 /* Localizable.strings in Resources */,
+				EC68F6672BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.xib in Resources */,
 				EC032A7D2B3AF0A7005CFB5F /* Assets.xcassets in Resources */,
 				EC032A7B2B3AF0A4005CFB5F /* Main.storyboard in Resources */,
 			);
@@ -193,8 +280,13 @@
 				EC40A2ED2B64600000B38411 /* UIView+Extensions.swift in Sources */,
 				EC032A782B3AF0A4005CFB5F /* ViewController.swift in Sources */,
 				EC032A742B3AF0A4005CFB5F /* AppDelegate.swift in Sources */,
+				ECED05BB2B8CB0CB006C8491 /* HomeViewController.swift in Sources */,
+				EC68F6662BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.swift in Sources */,
+				EC68F66B2BA0FC8100BD5297 /* PopularDishDetailViewController.swift in Sources */,
+				ECED05C12B91C6F5006C8491 /* CategoryCollectionViewCell.swift in Sources */,
 				EC2DD9922B4C3065005D72DA /* OnboardingCollectionViewCell.swift in Sources */,
 				EC032A762B3AF0A4005CFB5F /* SceneDelegate.swift in Sources */,
+				ECED05C62B94F833006C8491 /* PopularDishesCollectionViewCell.swift in Sources */,
 				EC032A8D2B43455C005CFB5F /* OnboardingViewController.swift in Sources */,
 				EC2DD9942B4D602C005D72DA /* OnboardingDataModel.swift in Sources */,
 			);

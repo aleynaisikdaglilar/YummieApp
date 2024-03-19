@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Yummie
+
+  Created by Aleyna Isikdaglilar [Ing Teknoloji A.S.-Tuzel Bankacilik Dijital Squad 1] on 13.02.2024.
+  
+*/
+"title_1" = "Delicious Dishes";
+"title_1" = "World-Class Chefs";
+"title_3" = "Instant World-Wide Delivery";
+"description_1" = "Experience a variety of amazing dishes from different cultures around the world.";
+"description_2" = "Our dishes are prepared by only the best.";
+"description_3" = "Your orders will be delivered instantly irrespective of your location around the world.";
