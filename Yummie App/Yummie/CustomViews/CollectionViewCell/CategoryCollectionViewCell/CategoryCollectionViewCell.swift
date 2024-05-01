@@ -65,4 +65,7 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
+    func setup(category: DishCategory) {
+        
+    }
 }

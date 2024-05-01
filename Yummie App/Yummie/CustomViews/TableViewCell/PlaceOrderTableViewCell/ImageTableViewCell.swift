@@ -15,24 +15,22 @@ class ImageTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "slide1")
-        imageView.backgroundColor = .blue
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
         return imageView
     }()
 
     private func prepareUI() {
-//        backgroundColor = .clear
-//        contentView.backgroundColor = .clear
-//        selectionStyle = .none
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
+        selectionStyle = .none
         
         contentView.addSubview(Image)
         
         Image.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         Image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         Image.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        Image.heightAnchor.constraint(equalToConstant: 350).isActive = true
-//        Image.widthAnchor.constraint(equalToConstant: 414).isActive = true
+        Image.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

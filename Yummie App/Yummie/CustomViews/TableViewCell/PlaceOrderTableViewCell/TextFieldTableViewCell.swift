@@ -15,20 +15,23 @@ class TextFieldTableViewCell: UITableViewCell {
         let text = UITextField()
         text.translatesAutoresizingMaskIntoConstraints = false
         text.borderStyle = .roundedRect
-        text.textAlignment = .left
+        text.textAlignment = .natural
+        text.placeholder = "Enter your name"
         return text
     }()
     
     private func prepareUI() {
-//        backgroundColor = .clear
-//        contentView.backgroundColor = .clear
-//        selectionStyle = .none
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
+        selectionStyle = .none
         
         contentView.addSubview(textField)
         
-        textField.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 718).isActive = true
-        textField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         textField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        textField.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        textField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
+        textField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
+
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

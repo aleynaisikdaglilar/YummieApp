@@ -89,17 +89,27 @@ final class ViewController: UIViewController {
         return stackView
     }()
 //    isk - değiştir
+//    placeOrderviewController'a back butonu ekle
     @objc private func nextButtonAction() {
         let currentPage = getCurrentPage(collectionView)
         guard currentPage < OnboardingDataModel.PromoArray.count - 1 else {
-//            let homeVC = HomeViewController()
-//            homeVC.modalPresentationStyle = .fullScreen
-//            homeVC.modalTransitionStyle = .flipHorizontal
-//            self.present(homeVC, animated: true, completion: nil)
-            let placeOrderViewController = PlaceOrderViewController()
-            placeOrderViewController.modalPresentationStyle = .fullScreen
-            placeOrderViewController.modalTransitionStyle = .flipHorizontal
-            self.present(placeOrderViewController, animated: true)
+            let homeVC = HomeViewController()
+            homeVC.modalPresentationStyle = .fullScreen
+            homeVC.modalTransitionStyle = .flipHorizontal
+            self.present(homeVC, animated: true, completion: nil)
+            
+//            let placeOrderViewController = PlaceOrderViewController()
+//            placeOrderViewController.modalPresentationStyle = .fullScreen
+//            placeOrderViewController.modalTransitionStyle = .flipHorizontal
+//            self.present(placeOrderViewController, animated: true)
+            
+//            let food = FoodListViewController()
+//            food.modalPresentationStyle = .fullScreen
+//            food.modalTransitionStyle = .flipHorizontal
+//            self.present(food, animated: true, completion: nil)
+            
+            
+            
 //            navigationController?.pushViewController(placeOrderViewController, animated: true)
             return
         }

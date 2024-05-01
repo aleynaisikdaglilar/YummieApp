@@ -58,11 +58,8 @@ final class PopularDishesCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .systemGray
-//        label.textAlignment = .center
         label.font = .systemFont(ofSize: 14, weight: .medium)
-//        label.numberOfLines = 1
         label.text = "desc"
-//        label.lineBreakMode = .byWordWrapping
         return label
     }()
     

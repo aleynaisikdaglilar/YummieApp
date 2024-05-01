@@ -24,7 +24,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "cart.circle.fill"), for: .normal)
         button.tintColor = .red
-        //        button.addTarget(self, action: #selector(nextButtonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(ordersButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -35,6 +35,39 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         return tableView
     }()
+    
+    @objc func ordersButtonAction() {
+    
+        
+        let navigationController = UINavigationController()
+        let foodList = FoodListViewController()
+        navigationController.pushViewController(foodList, animated: true)
+        present(navigationController, animated: true, completion: nil)
+        
+        
+//        let nav = UINavigationController()
+//        let food = FoodListViewController()
+//        navigationController?.viewControllers = [food]
+//        
+//        nav.navigationBar.barTintColor = .systemBlue
+//        nav.navigationBar.tintColor = .white
+//        nav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+//        present(nav, animated: true, completion: nil)
+        
+        
+        
+//        print("BACKBACKBACK")
+//        let food = FoodListViewController()
+//        self.present(food, animated: true, completion: nil)
+//        navigationController?.pushViewController(food, animated: true)
+        
+//        let transition = CATransition()
+//        transition.duration = 0.5
+//        transition.type = CATransitionType.push
+//        transition.subtype = CATransitionSubtype.fromRight
+//        self.view.window?.layer.add(transition, forKey: kCATransition)
+//        present(food, animated: false, completion: nil)
+    }
     
     private func prepareUI() {
         view.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
@@ -102,5 +135,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             return 200 // Default height for other rows
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 1 {
+            print("BASTIMMM")
+        }
+//        let placeOrderViewController = PlaceOrderViewController()
+//        navigationController?.pushViewController(placeOrderViewController, animated: true)
     }
 }

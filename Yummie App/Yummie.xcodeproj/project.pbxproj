@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7421E3CE2BD9B1D300D6522F /* FoodListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421E3CD2BD9B1D300D6522F /* FoodListViewController.swift */; };
+		745111922BE1538A00016088 /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745111912BE1538A00016088 /* DishCategory.swift */; };
+		748D8ECB2BDA923C000D34FB /* OrdersSnacksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748D8ECA2BDA923C000D34FB /* OrdersSnacksTableViewCell.swift */; };
 		749D63D42BB8DAA6000814BB /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749D63D32BB8DAA6000814BB /* CategoryTableViewCell.swift */; };
 		749D63D62BBB4BFB000814BB /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749D63D52BBB4BFA000814BB /* TitleLabel.swift */; };
 		749D63D82BBB5E1F000814BB /* CustomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749D63D72BBB5E1F000814BB /* CustomCardView.swift */; };
@@ -39,6 +42,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7421E3CD2BD9B1D300D6522F /* FoodListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListViewController.swift; sourceTree = "<group>"; };
+		745111912BE1538A00016088 /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
+		748D8ECA2BDA923C000D34FB /* OrdersSnacksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersSnacksTableViewCell.swift; sourceTree = "<group>"; };
 		749D63D32BB8DAA6000814BB /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		749D63D52BBB4BFA000814BB /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		749D63D72BBB5E1F000814BB /* CustomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardView.swift; sourceTree = "<group>"; };
@@ -83,9 +89,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		748D8EC92BDA9218000D34FB /* OrdersSnacksTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				748D8ECA2BDA923C000D34FB /* OrdersSnacksTableViewCell.swift */,
+			);
+			path = OrdersSnacksTableViewCell;
+			sourceTree = "<group>";
+		};
 		749D63CE2BB8DA36000814BB /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				748D8EC92BDA9218000D34FB /* OrdersSnacksTableViewCell */,
 				749D63E42BCDD7D3000814BB /* PlaceOrderTableViewCell */,
 				749D63DC2BC17B2F000814BB /* PopularDishesTableViewCell */,
 				749D63D92BC09524000814BB /* ChefsSpecialsTableViewCell */,
@@ -163,6 +178,7 @@
 				EC032A7E2B3AF0A7005CFB5F /* LaunchScreen.storyboard */,
 				EC032A812B3AF0A7005CFB5F /* Info.plist */,
 				749D63E22BCDD56F000814BB /* PlaceOrderViewController.swift */,
+				7421E3CD2BD9B1D300D6522F /* FoodListViewController.swift */,
 			);
 			path = Yummie;
 			sourceTree = "<group>";
@@ -171,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				EC2DD9932B4D602C005D72DA /* OnboardingDataModel.swift */,
+				745111912BE1538A00016088 /* DishCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -350,10 +367,12 @@
 			files = (
 				EC032A782B3AF0A4005CFB5F /* ViewController.swift in Sources */,
 				749D63EE2BCF12C3000814BB /* ButtonTableViewCell.swift in Sources */,
+				7421E3CE2BD9B1D300D6522F /* FoodListViewController.swift in Sources */,
 				EC032A742B3AF0A4005CFB5F /* AppDelegate.swift in Sources */,
 				749D63DE2BC17B5E000814BB /* PopularDishesTableViewCell.swift in Sources */,
 				749D63E62BCDD7F6000814BB /* ImageTableViewCell.swift in Sources */,
 				749D63D82BBB5E1F000814BB /* CustomCardView.swift in Sources */,
+				748D8ECB2BDA923C000D34FB /* OrdersSnacksTableViewCell.swift in Sources */,
 				ECED05BB2B8CB0CB006C8491 /* HomeViewController.swift in Sources */,
 				EC68F6662BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.swift in Sources */,
 				EC68F66B2BA0FC8100BD5297 /* PopularDishDetailViewController.swift in Sources */,
@@ -367,6 +386,7 @@
 				749D63E32BCDD56F000814BB /* PlaceOrderViewController.swift in Sources */,
 				749D63D42BB8DAA6000814BB /* CategoryTableViewCell.swift in Sources */,
 				749D63EA2BCEF427000814BB /* DescriptionTableViewCell.swift in Sources */,
+				745111922BE1538A00016088 /* DishCategory.swift in Sources */,
 				749D63D62BBB4BFB000814BB /* TitleLabel.swift in Sources */,
 				EC2DD9942B4D602C005D72DA /* OnboardingDataModel.swift in Sources */,
 				74CF4B132BB86F140041A6B0 /* ExampleOfExample.swift in Sources */,

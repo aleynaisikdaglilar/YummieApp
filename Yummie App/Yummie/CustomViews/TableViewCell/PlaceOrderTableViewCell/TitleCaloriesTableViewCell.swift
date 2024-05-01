@@ -17,12 +17,6 @@ class TitleCaloriesTableViewCell: UITableViewCell {
         stackView.axis = NSLayoutConstraint.Axis.horizontal
         stackView.distribution = .fill
         stackView.alignment = .fill
-//        stackView.spacing = 10.0
-//        stackView.backgroundColor = UIColor.white.withAlphaComponent(0.7)
-//        stackView.layer.shadowColor = UIColor.black.cgColor
-//        stackView.layer.shadowOpacity = 0.3
-//        stackView.layer.shadowRadius = 6
-//        stackView.layer.cornerRadius = 10
         return stackView
     }()
     
@@ -30,33 +24,37 @@ class TitleCaloriesTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.textAlignment = .center
-        label.font = .systemFont(ofSize: 19, weight: .semibold)
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.numberOfLines = 1
-        label.text = "title"
+        label.text = "Pasta Carbonara"
         return label
     }()
     
     private lazy var caloriesLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .red
-        label.textAlignment = .center
-        label.font = .systemFont(ofSize: 12, weight: .medium)
+        label.textColor = .systemRed
+        label.textAlignment = .right
+        label.font = .systemFont(ofSize: 17, weight: .medium)
         label.numberOfLines = 1
-        label.text = "cal"
+        label.text = "302 calories"
         return label
     }()
 
     private func prepareUI() {
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
+        selectionStyle = .none
+        
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(caloriesLabel)
         contentView.addSubview(stackView)
         
-        stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 618).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        stackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        stackView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

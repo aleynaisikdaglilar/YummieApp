@@ -14,7 +14,7 @@ class ButtonTableViewCell: UITableViewCell {
     private lazy var button: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Next", for: .normal)
+        button.setTitle("Place Order", for: .normal)
         button.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
@@ -24,15 +24,22 @@ class ButtonTableViewCell: UITableViewCell {
     }()
 
     private func prepareUI() {
-//        backgroundColor = .clear
-//        contentView.backgroundColor = .clear
-//        selectionStyle = .none
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
+        selectionStyle = .none
         
         contentView.addSubview(button)
         
-        button.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 768).isActive = true
-        button.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        button.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        button.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
+        button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
+
+        
+//        button.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+//        button.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
+//        button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
+//        button.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
