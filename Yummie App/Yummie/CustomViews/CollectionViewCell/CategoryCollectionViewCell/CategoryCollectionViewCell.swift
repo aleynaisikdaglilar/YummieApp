@@ -2,10 +2,11 @@
 //  CategoryCollectionViewCell.swift
 //  Yummie
 //
-//  Created by Aleyna Isikdaglilar [Ing Teknoloji A.S.-Tuzel Bankacilik Dijital Squad 1] on 1.03.2024.
+//  Created by Aleyna Isikdaglilar on 1.03.2024.
 //
 
 import UIKit
+//import Kingfisher
 
 final class CategoryCollectionViewCell: UICollectionViewCell {
     
@@ -65,7 +66,8 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func setup(category: DishCategory) {
-        
-    }
+//    func setup(category: DishCategory) {
+//        categoryTitleLabel.text = category.name
+////        CategoryImageView.kf.setImage(with: category.image?.asURL)
+//    }
 }

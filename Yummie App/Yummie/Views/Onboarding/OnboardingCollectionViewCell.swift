@@ -2,7 +2,7 @@
 //  OnboardingCollectionViewCell.swift
 //  Yummie
 //
-//  Created by Aleyna Isikdaglilar [Ing Teknoloji A.S.-Tuzel Bankacilik Dijital Squad 1] on 8.01.2024.
+//  Created by Aleyna Isikdaglilar on 8.01.2024.
 //
 
 import UIKit

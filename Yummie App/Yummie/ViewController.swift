@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Yummie
 //
-//  Created by Aleyna Isikdaglilar [Ing Teknoloji A.S.-Tuzel Bankacilik Dijital Squad 1] on 26.12.2023.
+//  Created by Aleyna Isikdaglilar on 26.12.2023.
 //
 
 import UIKit
@@ -88,29 +88,24 @@ final class ViewController: UIViewController {
         stackView.isHidden = true
         return stackView
     }()
-//    isk - değiştir
-//    placeOrderviewController'a back butonu ekle
+
     @objc private func nextButtonAction() {
         let currentPage = getCurrentPage(collectionView)
         guard currentPage < OnboardingDataModel.PromoArray.count - 1 else {
+            
+            guard let window = UIApplication.shared.keyWindow else {
+                return
+            }
             let homeVC = HomeViewController()
-            homeVC.modalPresentationStyle = .fullScreen
-            homeVC.modalTransitionStyle = .flipHorizontal
-            self.present(homeVC, animated: true, completion: nil)
+            let navigationController = UINavigationController(rootViewController: homeVC)
+            navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            navigationController.navigationBar.shadowImage = UIImage()
+            navigationController.navigationBar.isTranslucent = true
             
-//            let placeOrderViewController = PlaceOrderViewController()
-//            placeOrderViewController.modalPresentationStyle = .fullScreen
-//            placeOrderViewController.modalTransitionStyle = .flipHorizontal
-//            self.present(placeOrderViewController, animated: true)
-            
-//            let food = FoodListViewController()
-//            food.modalPresentationStyle = .fullScreen
-//            food.modalTransitionStyle = .flipHorizontal
-//            self.present(food, animated: true, completion: nil)
-            
-            
-            
-//            navigationController?.pushViewController(placeOrderViewController, animated: true)
+            window.rootViewController = navigationController
+            let options: UIView.AnimationOptions = .transitionFlipFromRight
+            let duration: TimeInterval = 0.6
+            UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: { completed in })
             return
         }
         collectionView.scrollToItem(at: IndexPath(item: currentPage + 1, section: 0), at: .right, animated: true)
@@ -141,6 +136,17 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NetworkService.shared.myFirstRequest { result in
+            switch result {
+                
+            case .success(let data):
+                for dish in data {
+                    print(dish.name ?? "")
+                }
+            case .failure(let error):
+                print("The error is : \(error.localizedDescription)")
+            }
+        }
         prepareUI()
     }
     
@@ -215,6 +221,9 @@ extension ViewController: UIScrollViewDelegate {
         let offSet = scrollView.contentOffset.x
         let width = scrollView.frame.width
         let horizontalCenter = width / 2
+        guard width != 0 else {
+            return 0
+        }
         return Int(offSet + horizontalCenter) / Int(width)
     }
 }

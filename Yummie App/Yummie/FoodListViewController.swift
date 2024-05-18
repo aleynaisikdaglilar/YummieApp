@@ -9,47 +9,41 @@ import UIKit
 
 class FoodListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    private enum Constant {
+        static let backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+    }
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
-        tableView.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+        tableView.backgroundColor = Constant.backgroundColor
         tableView.register(OrdersSnacksTableViewCell.self, forCellReuseIdentifier: OrdersSnacksTableViewCell.identifier)
         return tableView
     }()
     
-    @objc func ordersButtonAction() {
-        dismiss(animated: true, completion: nil)
-    }
-    
     private func prepareUI() {
         
-        view.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+        view.backgroundColor = Constant.backgroundColor
         tableView.dataSource = self
         tableView.delegate = self
         
         view.addSubview(tableView)
         
-        let navBar = UINavigationBar()
-        navBar.translatesAutoresizingMaskIntoConstraints = false
-        navBar.tintColor = .black
-        navBar.barTintColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
-        navBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navBar.shadowImage = UIImage()
+        title = "Orders"
         
-        let navigationItem = UINavigationItem()
-        navigationItem.title = "Orders"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(ordersButtonAction))
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = Constant.backgroundColor
+    
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
         
-        navBar.items = [navigationItem]
-        
-        view.addSubview(navBar)
-        
-        navBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
-        tableView.topAnchor.constraint(equalTo: navBar.bottomAnchor).isActive = true
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
@@ -62,14 +56,12 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
-        //        / Replace yourDataArray with your actual data array
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: OrdersSnacksTableViewCell.identifier, for: indexPath) as! OrdersSnacksTableViewCell
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -5,12 +5,17 @@
 //  Created by Aleyna Işıkdağlılar on 31.03.2024.
 //
 
-// collectionview ekle cell mi ? - horixantla
-// cl cell size width - height 170
-//collection iiçine şmageview
 import UIKit
 
 class CategoryTableViewCell: UITableViewCell {
+    
+//    static let categories: [DishCategory] = [
+//        .init(id: "id1", name: "Africa Dish", image: "https://picsum.photos/100/200"),
+//        .init(id: "id1", name: "Africa Dish 2", image: "https://picsum.photos/100/200"),
+//        .init(id: "id1", name: "Africa Dish 3", image: "https://picsum.photos/100/200"),
+//        .init(id: "id1", name: "Africa Dish 4", image: "https://picsum.photos/100/200"),
+//        .init(id: "id1", name: "Africa Dish", image: "https://picsum.photos/100/200")
+//    ]
     
     static let identifier = "CategoryTableViewCell"
     
@@ -28,9 +33,10 @@ class CategoryTableViewCell: UITableViewCell {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.isPagingEnabled = true
+        collectionView.isPagingEnabled = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         return collectionView
     }()
     
@@ -42,11 +48,10 @@ class CategoryTableViewCell: UITableViewCell {
         titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
         
-        categoryCollectionView.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 40).isActive = true
-        categoryCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
+        categoryCollectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
+        categoryCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0).isActive = true
         categoryCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
-        categoryCollectionView.heightAnchor.constraint(equalToConstant: 56).isActive = true
-        categoryCollectionView.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        categoryCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -55,8 +60,6 @@ class CategoryTableViewCell: UITableViewCell {
         contentView.backgroundColor = .clear
         selectionStyle = .none
         prepareUI()
-        
-        
     }
     
     required init?(coder: NSCoder) {

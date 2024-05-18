@@ -2,7 +2,7 @@
 //  PopularDishDetailViewController.swift
 //  Yummie
 //
-//  Created by Aleyna Isikdaglilar [Ing Teknoloji A.S.-Tuzel Bankacilik Dijital Squad 1] on 13.03.2024.
+//  Created by Aleyna Isikdaglilar on 13.03.2024.
 //
 
 import UIKit
