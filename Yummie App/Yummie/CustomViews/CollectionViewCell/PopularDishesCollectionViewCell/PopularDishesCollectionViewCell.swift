@@ -12,6 +12,8 @@ final class PopularDishesCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "PopularDishesCollectionViewCell"
     
+    let url = URL(string: "https://picsum.photos/100/200")
+    
     let cardView = CustomCardView()
 
     private lazy var stackViewVertical: UIStackView = {
@@ -37,7 +39,8 @@ final class PopularDishesCollectionViewCell: UICollectionViewCell {
     private lazy var popularImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "slide1")
+//        imageView.image = UIImage(named: "slide1")
+        imageView.kf.setImage(with: url)
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
         return imageView
@@ -118,6 +121,13 @@ final class PopularDishesCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func configure(popular: PopularsSpecials) {
+        popularTitleLabel.text = popular.name
+        popularImageView.kf.setImage(with: popular.image?.asURL)
+        popularCaloriesLabel.text = popular.formattedCalories
+        popularDescLabel.text = popular.description
     }
 
 }

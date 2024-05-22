@@ -6,18 +6,20 @@
 //
 
 import UIKit
-//import Kingfisher
+import Kingfisher
 
 final class CategoryCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "CategoryCollectionViewCell"
+    
+    let url = URL(string: "https://picsum.photos/100/200")
     
     let cardView = CustomCardView()
     
     private lazy var CategoryImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "slide1")
+        imageView.kf.setImage(with: url)
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
         return imageView
@@ -63,11 +65,10 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
-//    func setup(category: DishCategory) {
-//        categoryTitleLabel.text = category.name
-////        CategoryImageView.kf.setImage(with: category.image?.asURL)
-//    }
+    func configure(category: Category) {
+        categoryTitleLabel.text = category.title
+        CategoryImageView.kf.setImage(with: category.image?.asURL)
+    }
 }

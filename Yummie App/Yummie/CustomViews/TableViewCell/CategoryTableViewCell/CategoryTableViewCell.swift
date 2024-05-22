@@ -9,15 +9,9 @@ import UIKit
 
 class CategoryTableViewCell: UITableViewCell {
     
-//    static let categories: [DishCategory] = [
-//        .init(id: "id1", name: "Africa Dish", image: "https://picsum.photos/100/200"),
-//        .init(id: "id1", name: "Africa Dish 2", image: "https://picsum.photos/100/200"),
-//        .init(id: "id1", name: "Africa Dish 3", image: "https://picsum.photos/100/200"),
-//        .init(id: "id1", name: "Africa Dish 4", image: "https://picsum.photos/100/200"),
-//        .init(id: "id1", name: "Africa Dish", image: "https://picsum.photos/100/200")
-//    ]
-    
     static let identifier = "CategoryTableViewCell"
+    
+    private var categories: [Category] = []
     
     let titleLabel = TitleLabel( customText: "Food Category")
     
@@ -62,6 +56,11 @@ class CategoryTableViewCell: UITableViewCell {
         prepareUI()
     }
     
+    func configure(with categories: [Category]) {
+        self.categories = categories
+        categoryCollectionView.reloadData()
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -69,12 +68,13 @@ class CategoryTableViewCell: UITableViewCell {
 
 extension CategoryTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
+        cell.configure(category: categories[indexPath.row])
         return cell
     }
     

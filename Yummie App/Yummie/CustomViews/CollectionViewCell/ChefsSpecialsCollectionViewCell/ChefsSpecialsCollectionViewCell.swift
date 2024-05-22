@@ -11,13 +11,15 @@ final class ChefsSpecialsCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "ChefsSpecialsCollectionViewCell"
     
+    let url = URL(string: "https://picsum.photos/100/200")
+    
     let cardView = CustomCardView()
     
     private lazy var specialsImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "slide1")
-//        imageView.backgroundColor = .orange
+//        imageView.image = UIImage(named: "slide1")
+        imageView.kf.setImage(with: url)
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
         return imageView
@@ -108,4 +110,10 @@ final class ChefsSpecialsCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
+    func configure(specials: PopularsSpecials) {
+        specialsTitleLabel.text = specials.name
+        specialsImageView.kf.setImage(with: specials.image?.asURL)
+        specialsCaloriesLabel.text = specials.formattedCalories
+        specialsDescLabel.text = specials.description
+    }
 }

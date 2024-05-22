@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AllFoods {
+struct AllFoods: Decodable {
     
     let categories: [Category]?
     let populars: [PopularsSpecials]?

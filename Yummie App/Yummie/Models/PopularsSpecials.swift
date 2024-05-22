@@ -15,9 +15,7 @@ struct PopularsSpecials: Decodable {
     let image: String?
     let calories: Int?
     
-//    anyela - videodan oluştururken bak
-    
-//    var formattedCalories: String {
-//        return "\(calories ?? 0) calories"
-//    }
+    var formattedCalories: String {
+        return "\(calories ?? 0) calories"
+    }
 }

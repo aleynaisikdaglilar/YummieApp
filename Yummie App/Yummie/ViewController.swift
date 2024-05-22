@@ -136,17 +136,17 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkService.shared.myFirstRequest { result in
-            switch result {
-                
-            case .success(let data):
-                for dish in data {
-                    print(dish.name ?? "")
-                }
-            case .failure(let error):
-                print("The error is : \(error.localizedDescription)")
-            }
-        }
+//        NetworkService.shared.myFirstRequest { result in
+//            switch result {
+//                
+//            case .success(let data):
+//                for dish in data {
+//                    print(dish.name ?? "")
+//                }
+//            case .failure(let error):
+//                print("The error is : \(error.localizedDescription)")
+//            }
+//        }
         prepareUI()
     }
     

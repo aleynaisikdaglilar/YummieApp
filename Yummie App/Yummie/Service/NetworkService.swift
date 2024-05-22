@@ -12,7 +12,7 @@ struct NetworkService {
     static let shared = NetworkService()
     private init() {}
     
-    public func myFirstRequest(completion: @escaping(Result<[PopularsSpecials], Error>) -> Void) {
+    func fetchAllFoods(completion: @escaping(Result<AllFoods, Error>) -> Void) {
         request(route: .fetchAllFoods, method: .get, completion: completion)
     }
     

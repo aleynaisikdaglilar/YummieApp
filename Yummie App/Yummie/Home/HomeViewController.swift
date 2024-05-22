@@ -5,8 +5,13 @@
 //  Created by Aleyna Isikdaglilar on 26.02.2024.
 //
 import UIKit
+import SVProgressHUD
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var categories: [Category] = []
+    var populars: [PopularsSpecials] = []
+    var specials: [PopularsSpecials] = []
     
     private enum Constant {
         static let backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
@@ -32,7 +37,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let rightButton = UIBarButtonItem(image: UIImage(systemName: "cart.circle.fill"), style: .done, target: self, action: #selector(ordersButtonAction))
         rightButton.tintColor = .red
         self.navigationItem.rightBarButtonItem = rightButton
-
+        
         self.navigationController?.navigationBar.tintColor = UIColor.black
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
@@ -40,7 +45,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         view.backgroundColor = Constant.backgroundColor
         tableView.dataSource = self
         tableView.delegate = self
-    
+        
         view.addSubview(tableView)
         
         let safeGuide = self.view.safeAreaLayoutGuide
@@ -55,6 +60,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         registerCells()
         prepareUI()
+        
+        SVProgressHUD.show()
+        NetworkService.shared.fetchAllFoods { [weak self] result in
+            switch result {
+            case .success(let allFoods):
+                SVProgressHUD.dismiss()
+                self?.categories = allFoods.categories ?? []
+                self?.populars = allFoods.populars ?? []
+                self?.specials = allFoods.specials ?? []
+                
+                self?.tableView.reloadData()
+            case .failure(let error):
+                SVProgressHUD.showError(withStatus: error.localizedDescription)
+            }
+        }
+        
     }
     
     private func registerCells() {
@@ -72,12 +93,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as! CategoryTableViewCell
+            cell.configure(with: categories)
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: PopularDishesTableViewCell.identifier, for: indexPath) as! PopularDishesTableViewCell
+            cell.configure(with: populars)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: ChefsSpecialsTableViewCell.identifier, for: indexPath) as! ChefsSpecialsTableViewCell
+            cell.configure(with: specials)
             return cell
         }
     }

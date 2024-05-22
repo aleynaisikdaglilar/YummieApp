@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7421E3CE2BD9B1D300D6522F /* FoodListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421E3CD2BD9B1D300D6522F /* FoodListViewController.swift */; };
+		7438FBF12BFE409100C9913A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7438FBF02BFE409100C9913A /* Kingfisher */; };
+		7438FBF72BFE77E400C9913A /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 7438FBF62BFE77E400C9913A /* SVProgressHUD */; };
 		745111942BE2663400016088 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745111932BE2663400016088 /* String + Extension.swift */; };
 		745111962BE266CE00016088 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745111952BE266CE00016088 /* UIView + Extension.swift */; };
 		74897B602BEEBDBE0052C091 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 74897B5E2BEEBDBE0052C091 /* Localizable.strings */; };
@@ -101,12 +103,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7438FBF72BFE77E400C9913A /* SVProgressHUD in Frameworks */,
+				7438FBF12BFE409100C9913A /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7416D72A2BFE399600C43FB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		748D8EC92BDA9218000D34FB /* OrdersSnacksTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +191,7 @@
 			children = (
 				EC032A722B3AF0A3005CFB5F /* Yummie */,
 				EC032A712B3AF0A3005CFB5F /* Products */,
+				7416D72A2BFE399600C43FB7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -339,6 +351,10 @@
 			dependencies = (
 			);
 			name = Yummie;
+			packageProductDependencies = (
+				7438FBF02BFE409100C9913A /* Kingfisher */,
+				7438FBF62BFE77E400C9913A /* SVProgressHUD */,
+			);
 			productName = Yummie;
 			productReference = EC032A702B3AF0A3005CFB5F /* Yummie.app */;
 			productType = "com.apple.product-type.application";
@@ -369,6 +385,10 @@
 				tr,
 			);
 			mainGroup = EC032A672B3AF0A3005CFB5F;
+			packageReferences = (
+				7438FBEF2BFE409100C9913A /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				7438FBF52BFE77E400C9913A /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
+			);
 			productRefGroup = EC032A712B3AF0A3005CFB5F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -655,6 +675,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7438FBEF2BFE409100C9913A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+		7438FBF52BFE77E400C9913A /* XCRemoteSwiftPackageReference "SVProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVProgressHUD/SVProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7438FBF02BFE409100C9913A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7438FBEF2BFE409100C9913A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		7438FBF62BFE77E400C9913A /* SVProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7438FBF52BFE77E400C9913A /* XCRemoteSwiftPackageReference "SVProgressHUD" */;
+			productName = SVProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EC032A682B3AF0A3005CFB5F /* Project object */;
 }
