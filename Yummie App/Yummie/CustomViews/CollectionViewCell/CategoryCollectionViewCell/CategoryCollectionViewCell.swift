@@ -12,14 +12,11 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "CategoryCollectionViewCell"
     
-    let url = URL(string: "https://picsum.photos/100/200")
-    
     let cardView = CustomCardView()
     
     private lazy var CategoryImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.kf.setImage(with: url)
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
         return imageView
@@ -29,10 +26,9 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.font = .systemFont(ofSize: 13, weight: .medium)
-        label.numberOfLines = 0
-        label.text = "collection"
+        label.numberOfLines = 1
         return label
     }()
 
@@ -53,6 +49,7 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
 
         categoryTitleLabel.centerYAnchor.constraint(equalTo: CategoryImageView.centerYAnchor).isActive = true
         categoryTitleLabel.leadingAnchor.constraint(equalTo: CategoryImageView.trailingAnchor, constant: 8).isActive = true
+        categoryTitleLabel.widthAnchor.constraint(equalToConstant: 90).isActive = true
     }
     
     override init(frame: CGRect) {

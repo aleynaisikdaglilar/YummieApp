@@ -11,17 +11,14 @@ final class ChefsSpecialsCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "ChefsSpecialsCollectionViewCell"
     
-    let url = URL(string: "https://picsum.photos/100/200")
-    
     let cardView = CustomCardView()
     
     private lazy var specialsImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-//        imageView.image = UIImage(named: "slide1")
-        imageView.kf.setImage(with: url)
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
+        imageView.cornerRadius = 5
         return imageView
     }()
     
@@ -31,10 +28,7 @@ final class ChefsSpecialsCollectionViewCell: UICollectionViewCell {
         stackView.axis = NSLayoutConstraint.Axis.vertical
         stackView.distribution = .fillEqually
         stackView.spacing = 8
-//        stackView.alignment = .fill
-//        stackView.layer.masksToBounds = true
         stackView.isLayoutMarginsRelativeArrangement = true
-//        stackView.backgroundColor = .yellow
         return stackView
     }()
     
@@ -42,10 +36,9 @@ final class ChefsSpecialsCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.font = .systemFont(ofSize: 19, weight: .semibold)
         label.numberOfLines = 1
-        label.text = "title"
         return label
     }()
     
@@ -63,8 +56,8 @@ final class ChefsSpecialsCollectionViewCell: UICollectionViewCell {
     private lazy var specialsCaloriesLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .red
-        label.textAlignment = .right
+        label.textColor = .systemRed
+        label.textAlignment = .left
         label.font = .systemFont(ofSize: 12, weight: .medium)
         label.numberOfLines = 1
         label.text = "cal"
@@ -92,6 +85,7 @@ final class ChefsSpecialsCollectionViewCell: UICollectionViewCell {
         stackViewVertical.topAnchor.constraint(equalTo: specialsImageView.topAnchor).isActive = true
         stackViewVertical.leadingAnchor.constraint(equalTo: specialsImageView.trailingAnchor, constant: 16).isActive = true
         stackViewVertical.bottomAnchor.constraint(equalTo: specialsImageView.bottomAnchor).isActive = true
+        stackViewVertical.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -8).isActive = true
     }
     
     
