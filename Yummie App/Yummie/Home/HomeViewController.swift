@@ -7,7 +7,12 @@
 import UIKit
 import SVProgressHUD
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PopularDishesTableViewCellDelegate, ChefsSpecialsTableViewCellDelegate {
+    func didSelectItem(_ popularSpecials: PopularsSpecials) {
+        let placeOrder = PlaceOrderViewController()
+        placeOrder.selectedItem = popularSpecials
+        navigationController?.pushViewController(placeOrder, animated: true)
+    }
     
     var categories: [Category] = []
     var populars: [PopularsSpecials] = []
@@ -98,10 +103,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: PopularDishesTableViewCell.identifier, for: indexPath) as! PopularDishesTableViewCell
             cell.configure(with: populars)
+            cell.delegate = self
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: ChefsSpecialsTableViewCell.identifier, for: indexPath) as! ChefsSpecialsTableViewCell
             cell.configure(with: specials)
+            cell.delegate = self
             return cell
         }
     }
@@ -114,6 +121,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             return 365
         } else {
             return 170
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+//            tableView.deselectRow(at: indexPath, animated: true)
+        } else {
+            tableView.deselectRow(at: indexPath, animated: true)
         }
     }
 }

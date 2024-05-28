@@ -12,5 +12,4 @@ struct AllFoods: Decodable {
     let categories: [Category]?
     let populars: [PopularsSpecials]?
     let specials: [PopularsSpecials]?
-    
 }

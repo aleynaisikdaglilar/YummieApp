@@ -65,4 +65,9 @@ class TitleCaloriesTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func configure(with title: String, calories: String) {
+        titleLabel.text = title
+        caloriesLabel.text = calories
+    }
 }

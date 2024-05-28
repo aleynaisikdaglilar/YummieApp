@@ -5,15 +5,20 @@
 //  Created by Aleyna Işıkdağlılar on 6.04.2024.
 //
 
-//textlerin hizası - title ile arasındaki bosluk
-
 import UIKit
+
+protocol PopularDishesTableViewCellDelegate: AnyObject {
+    func didSelectItem(_ popularSpecials: PopularsSpecials)
+}
 
 class PopularDishesTableViewCell: UITableViewCell {
     
     static let identifier = "PopularDishesTableViewCell"
     
     private var populars: [PopularsSpecials] = []
+    
+    weak var delegate: PopularDishesTableViewCellDelegate?
+
     
     let titleLabel = TitleLabel( customText: "Popular Dishes")
     
@@ -84,11 +89,9 @@ extension PopularDishesTableViewCell: UICollectionViewDelegateFlowLayout, UIColl
         return CGSize(width: 180, height: 290)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let placeOrderViewController = PlaceOrderViewController()
-//        let navigationController = UINavigationController()
-//        navigationController.pushViewController(placeOrderViewController, animated: true)
-        
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {        
+        let populars = populars[indexPath.item]
+        delegate?.didSelectItem(populars)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

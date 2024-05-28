@@ -9,6 +9,8 @@ import UIKit
 
 class PlaceOrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var selectedItem: PopularsSpecials?
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -28,19 +30,6 @@ class PlaceOrderViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     private func prepareUI() {
-        
-        //        let appearance = UINavigationBarAppearance()
-        //        appearance.configureWithTransparentBackground()
-        //        navigationItem.standardAppearance = appearance
-        //        navigationItem.compactAppearance = appearance
-        //        navigationItem.scrollEdgeAppearance = appearance
-        //        navigationItem.largeTitleDisplayMode = .never
-        
-//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(backAction))
-//        
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "SRESESGS", style: .plain, target: nil, action: nil)
-        
-        
         view.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         view.insetsLayoutMarginsFromSafeArea = false
         tableView.dataSource = self
@@ -52,12 +41,6 @@ class PlaceOrderViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-    }
-    
-    @objc func backAction() {
-//        navigationController?.popViewController(animated: true)
-//        print("BACKBACKBACK")
-//        navigationController?.pushViewController(FoodListViewController(), animated: true)
     }
     
     override func viewDidLoad() {
@@ -74,12 +57,21 @@ class PlaceOrderViewController: UIViewController, UITableViewDelegate, UITableVi
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: ImageTableViewCell.identifier, for: indexPath) as! ImageTableViewCell
+            if let selectedItem = selectedItem {
+                cell.configure(with: selectedItem.image ?? "")
+            }
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TitleCaloriesTableViewCell.identifier, for: indexPath) as! TitleCaloriesTableViewCell
+            if let selectedItem = selectedItem {
+                cell.configure(with: selectedItem.name ?? "", calories: selectedItem.formattedCalories)
+            }
             return cell
         } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionTableViewCell.identifier, for: indexPath) as! DescriptionTableViewCell
+            if let selectedItem = selectedItem {
+                cell.configure(with: selectedItem.description ?? "")
+            }
             return cell
         } else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TextFieldTableViewCell.identifier, for: indexPath) as! TextFieldTableViewCell

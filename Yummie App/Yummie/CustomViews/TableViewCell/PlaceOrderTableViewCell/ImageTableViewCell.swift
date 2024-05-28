@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ImageTableViewCell: UITableViewCell {
 
@@ -40,5 +41,9 @@ class ImageTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(with image: String) {
+        Image.kf.setImage(with: image.description.asURL)
     }
 }

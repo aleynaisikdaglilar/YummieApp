@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol ChefsSpecialsTableViewCellDelegate: AnyObject {
+    func didSelectItem(_ popularSpecials: PopularsSpecials)
+}
+
 class ChefsSpecialsTableViewCell: UITableViewCell {
     
     static let identifier = "ChefsSpecialsTableViewCell"
     
     private var specials: [PopularsSpecials] = []
+    
+    weak var delegate: ChefsSpecialsTableViewCellDelegate?
     
     let titleLabel = TitleLabel( customText: "Chef's Specials")
     
@@ -78,19 +84,24 @@ extension ChefsSpecialsTableViewCell: UICollectionViewDelegateFlowLayout, UIColl
         return cell
     }
     
-        func collectionView(_ collectionView: UICollectionView, layout UICollectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: 330, height: 100)
-
-        }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let specials = specials[indexPath.item]
+        delegate?.didSelectItem(specials)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout UICollectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 330, height: 100)
+        
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-            // Return the minimum spacing between lines in the collection view.
-            return 20 // Adjust as needed
-        }
-
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-            // Return the minimum spacing between items in the same row.
-            return 20 // Adjust as needed
-        }
+        // Return the minimum spacing between lines in the collection view.
+        return 20 // Adjust as needed
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        // Return the minimum spacing between items in the same row.
+        return 20 // Adjust as needed
+    }
     
 }

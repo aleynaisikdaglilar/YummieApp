@@ -98,7 +98,6 @@ final class PopularDishesCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         
         prepareUI()
     }
@@ -109,7 +108,6 @@ final class PopularDishesCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     func configure(popular: PopularsSpecials) {
