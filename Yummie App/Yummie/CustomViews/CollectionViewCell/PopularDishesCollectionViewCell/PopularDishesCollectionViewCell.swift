@@ -5,7 +5,6 @@
 //  Created by Aleyna Isikdaglilar on 3.03.2024.
 //
 
-//desc sığmıyor text
 import UIKit
 
 final class PopularDishesCollectionViewCell: UICollectionViewCell {

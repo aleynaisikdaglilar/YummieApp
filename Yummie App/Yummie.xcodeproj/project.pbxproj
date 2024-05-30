@@ -11,10 +11,13 @@
 		7438FBF12BFE409100C9913A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7438FBF02BFE409100C9913A /* Kingfisher */; };
 		7438FBF72BFE77E400C9913A /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 7438FBF62BFE77E400C9913A /* SVProgressHUD */; };
 		744CBB542C013F6500190C46 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744CBB532C013F6500190C46 /* UIViewController+Extension.swift */; };
+		744CBB572C07683E00190C46 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 744CBB562C07683E00190C46 /* IQKeyboardManagerSwift */; };
+		744CBB592C07D3D300190C46 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744CBB582C07D3D300190C46 /* Order.swift */; };
+		744CBB5B2C07D48900190C46 /* OrdersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744CBB5A2C07D48900190C46 /* OrdersListViewController.swift */; };
 		745111942BE2663400016088 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745111932BE2663400016088 /* String + Extension.swift */; };
 		745111962BE266CE00016088 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745111952BE266CE00016088 /* UIView + Extension.swift */; };
 		74897B602BEEBDBE0052C091 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 74897B5E2BEEBDBE0052C091 /* Localizable.strings */; };
-		748D8ECB2BDA923C000D34FB /* OrdersSnacksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748D8ECA2BDA923C000D34FB /* OrdersSnacksTableViewCell.swift */; };
+		748D8ECB2BDA923C000D34FB /* OrdersCategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748D8ECA2BDA923C000D34FB /* OrdersCategoriesTableViewCell.swift */; };
 		749D63D42BB8DAA6000814BB /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749D63D32BB8DAA6000814BB /* CategoryTableViewCell.swift */; };
 		749D63D62BBB4BFB000814BB /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749D63D52BBB4BFA000814BB /* TitleLabel.swift */; };
 		749D63D82BBB5E1F000814BB /* CustomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749D63D72BBB5E1F000814BB /* CustomCardView.swift */; };
@@ -56,11 +59,13 @@
 		741D35F42BE8E2D80088B42E /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		7421E3CD2BD9B1D300D6522F /* FoodListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListViewController.swift; sourceTree = "<group>"; };
 		744CBB532C013F6500190C46 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		744CBB582C07D3D300190C46 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		744CBB5A2C07D48900190C46 /* OrdersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListViewController.swift; sourceTree = "<group>"; };
 		745111932BE2663400016088 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
 		745111952BE266CE00016088 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		74897B5F2BEEBDBE0052C091 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		74897B612BEEBDE80052C091 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		748D8ECA2BDA923C000D34FB /* OrdersSnacksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersSnacksTableViewCell.swift; sourceTree = "<group>"; };
+		748D8ECA2BDA923C000D34FB /* OrdersCategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCategoriesTableViewCell.swift; sourceTree = "<group>"; };
 		749D63D32BB8DAA6000814BB /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		749D63D52BBB4BFA000814BB /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		749D63D72BBB5E1F000814BB /* CustomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardView.swift; sourceTree = "<group>"; };
@@ -107,6 +112,7 @@
 			files = (
 				7438FBF72BFE77E400C9913A /* SVProgressHUD in Frameworks */,
 				7438FBF12BFE409100C9913A /* Kingfisher in Frameworks */,
+				744CBB572C07683E00190C46 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,18 +126,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		748D8EC92BDA9218000D34FB /* OrdersSnacksTableViewCell */ = {
+		748D8EC92BDA9218000D34FB /* OrdersCategoriesTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				748D8ECA2BDA923C000D34FB /* OrdersSnacksTableViewCell.swift */,
+				748D8ECA2BDA923C000D34FB /* OrdersCategoriesTableViewCell.swift */,
 			);
-			path = OrdersSnacksTableViewCell;
+			path = OrdersCategoriesTableViewCell;
 			sourceTree = "<group>";
 		};
 		749D63CE2BB8DA36000814BB /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				748D8EC92BDA9218000D34FB /* OrdersSnacksTableViewCell */,
+				748D8EC92BDA9218000D34FB /* OrdersCategoriesTableViewCell */,
 				749D63E42BCDD7D3000814BB /* PlaceOrderTableViewCell */,
 				749D63DC2BC17B2F000814BB /* PopularDishesTableViewCell */,
 				749D63D92BC09524000814BB /* ChefsSpecialsTableViewCell */,
@@ -191,6 +197,7 @@
 		EC032A672B3AF0A3005CFB5F = {
 			isa = PBXGroup;
 			children = (
+				744CBB5A2C07D48900190C46 /* OrdersListViewController.swift */,
 				EC032A722B3AF0A3005CFB5F /* Yummie */,
 				EC032A712B3AF0A3005CFB5F /* Products */,
 				7416D72A2BFE399600C43FB7 /* Frameworks */,
@@ -217,11 +224,11 @@
 				EC032A872B4344D4005CFB5F /* Models */,
 				EC032A732B3AF0A4005CFB5F /* AppDelegate.swift */,
 				EC032A752B3AF0A4005CFB5F /* SceneDelegate.swift */,
+				749D63E22BCDD56F000814BB /* PlaceOrderViewController.swift */,
 				EC032A772B3AF0A4005CFB5F /* ViewController.swift */,
 				EC032A7C2B3AF0A7005CFB5F /* Assets.xcassets */,
 				EC032A7E2B3AF0A7005CFB5F /* LaunchScreen.storyboard */,
 				EC032A812B3AF0A7005CFB5F /* Info.plist */,
-				749D63E22BCDD56F000814BB /* PlaceOrderViewController.swift */,
 				7421E3CD2BD9B1D300D6522F /* FoodListViewController.swift */,
 				74897B5E2BEEBDBE0052C091 /* Localizable.strings */,
 			);
@@ -235,6 +242,7 @@
 				74D6BC902BF2161900863E80 /* Category.swift */,
 				74D6BC922BF25A7300863E80 /* PopularsSpecials.swift */,
 				74D6BC982BF25C0B00863E80 /* AllFoods.swift */,
+				744CBB582C07D3D300190C46 /* Order.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -357,6 +365,7 @@
 			packageProductDependencies = (
 				7438FBF02BFE409100C9913A /* Kingfisher */,
 				7438FBF62BFE77E400C9913A /* SVProgressHUD */,
+				744CBB562C07683E00190C46 /* IQKeyboardManagerSwift */,
 			);
 			productName = Yummie;
 			productReference = EC032A702B3AF0A3005CFB5F /* Yummie.app */;
@@ -391,6 +400,7 @@
 			packageReferences = (
 				7438FBEF2BFE409100C9913A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				7438FBF52BFE77E400C9913A /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
+				744CBB552C07683E00190C46 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = EC032A712B3AF0A3005CFB5F /* Products */;
 			projectDirPath = "";
@@ -430,11 +440,12 @@
 				744CBB542C013F6500190C46 /* UIViewController+Extension.swift in Sources */,
 				EC032A742B3AF0A4005CFB5F /* AppDelegate.swift in Sources */,
 				749D63DE2BC17B5E000814BB /* PopularDishesTableViewCell.swift in Sources */,
+				744CBB5B2C07D48900190C46 /* OrdersListViewController.swift in Sources */,
 				749D63E62BCDD7F6000814BB /* ImageTableViewCell.swift in Sources */,
 				74D6BC8F2BF2123200863E80 /* ApiResponse.swift in Sources */,
 				74D6BCA02BF2A64800863E80 /* Method.swift in Sources */,
 				749D63D82BBB5E1F000814BB /* CustomCardView.swift in Sources */,
-				748D8ECB2BDA923C000D34FB /* OrdersSnacksTableViewCell.swift in Sources */,
+				748D8ECB2BDA923C000D34FB /* OrdersCategoriesTableViewCell.swift in Sources */,
 				74D6BC992BF25C0B00863E80 /* AllFoods.swift in Sources */,
 				ECED05BB2B8CB0CB006C8491 /* HomeViewController.swift in Sources */,
 				EC68F6662BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.swift in Sources */,
@@ -450,6 +461,7 @@
 				745111962BE266CE00016088 /* UIView + Extension.swift in Sources */,
 				ECED05C62B94F833006C8491 /* PopularDishesCollectionViewCell.swift in Sources */,
 				749D63E82BCEF108000814BB /* TitleCaloriesTableViewCell.swift in Sources */,
+				744CBB592C07D3D300190C46 /* Order.swift in Sources */,
 				749D63E32BCDD56F000814BB /* PlaceOrderViewController.swift in Sources */,
 				749D63D42BB8DAA6000814BB /* CategoryTableViewCell.swift in Sources */,
 				74D6BC912BF2161900863E80 /* Category.swift in Sources */,
@@ -697,6 +709,14 @@
 				minimumVersion = 2.3.1;
 			};
 		};
+		744CBB552C07683E00190C46 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -709,6 +729,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7438FBF52BFE77E400C9913A /* XCRemoteSwiftPackageReference "SVProgressHUD" */;
 			productName = SVProgressHUD;
+		};
+		744CBB562C07683E00190C46 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 744CBB552C07683E00190C46 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

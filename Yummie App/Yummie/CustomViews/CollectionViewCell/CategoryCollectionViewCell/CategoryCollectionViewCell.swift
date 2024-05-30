@@ -39,7 +39,7 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         
         cardView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        cardView.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        cardView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         cardView.widthAnchor.constraint(equalToConstant: 150).isActive = true
         
         CategoryImageView.centerYAnchor.constraint(equalTo: cardView.centerYAnchor).isActive = true

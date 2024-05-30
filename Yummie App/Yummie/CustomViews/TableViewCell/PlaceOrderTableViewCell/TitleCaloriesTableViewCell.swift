@@ -27,7 +27,6 @@ class TitleCaloriesTableViewCell: UITableViewCell {
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.numberOfLines = 1
-        label.text = "Pasta Carbonara"
         return label
     }()
     
@@ -38,7 +37,6 @@ class TitleCaloriesTableViewCell: UITableViewCell {
         label.textAlignment = .right
         label.font = .systemFont(ofSize: 17, weight: .medium)
         label.numberOfLines = 1
-        label.text = "302 calories"
         return label
     }()
 

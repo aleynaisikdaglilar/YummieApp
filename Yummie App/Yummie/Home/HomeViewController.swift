@@ -7,7 +7,14 @@
 import UIKit
 import SVProgressHUD
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PopularDishesTableViewCellDelegate, ChefsSpecialsTableViewCellDelegate {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PopularDishesTableViewCellDelegate, ChefsSpecialsTableViewCellDelegate, CategoryTableViewCellDelegate {
+    
+    func didSelectItem(_ category: Category) {
+        let list = FoodListViewController()
+        list.selectedItem = category
+        navigationController?.pushViewController(list, animated: true)
+    }
+    
     func didSelectItem(_ popularSpecials: PopularsSpecials) {
         let placeOrder = PlaceOrderViewController()
         placeOrder.selectedItem = popularSpecials
@@ -84,7 +91,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     private func registerCells() {
-        
         tableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: CategoryTableViewCell.identifier)
         tableView.register(ChefsSpecialsTableViewCell.self, forCellReuseIdentifier: ChefsSpecialsTableViewCell.identifier)
         tableView.register(PopularDishesTableViewCell.self, forCellReuseIdentifier: PopularDishesTableViewCell.identifier)
@@ -99,6 +105,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as! CategoryTableViewCell
             cell.configure(with: categories)
+            cell.delegate = self
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: PopularDishesTableViewCell.identifier, for: indexPath) as! PopularDishesTableViewCell
@@ -125,10 +132,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-//            tableView.deselectRow(at: indexPath, animated: true)
-        } else {
-            tableView.deselectRow(at: indexPath, animated: true)
-        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

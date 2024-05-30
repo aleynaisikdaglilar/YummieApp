@@ -1,5 +1,5 @@
 //
-//  OrdersSnacksTableViewCell.swift
+//  OrdersCategoriesTableViewCell.swift
 //  Yummie
 //
 //  Created by Aleyna Işıkdağlılar on 25.04.2024.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class OrdersSnacksTableViewCell: UITableViewCell {
+class OrdersCategoriesTableViewCell: UITableViewCell {
     
-    static let identifier = "OrdersSnacksTableViewCell"
+    static let identifier = "OrdersCategoriesTableViewCell"
 
     let cardView = CustomCardView()
     
@@ -19,6 +19,7 @@ class OrdersSnacksTableViewCell: UITableViewCell {
         imageView.image = UIImage(named: "slide1")
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
+        imageView.cornerRadius = 5
         return imageView
     }()
     
@@ -38,7 +39,6 @@ class OrdersSnacksTableViewCell: UITableViewCell {
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 17, weight: .medium)
         label.numberOfLines = 1
-        label.text = "title"
         return label
     }()
     
@@ -46,8 +46,9 @@ class OrdersSnacksTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .systemGray
-        label.font = .systemFont(ofSize: 14, weight: .medium)
-        label.text = "desc"
+        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.numberOfLines = 1
+        label.textAlignment = .left
         return label
     }()
     
@@ -69,19 +70,20 @@ class OrdersSnacksTableViewCell: UITableViewCell {
         
         image.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 16).isActive = true
         image.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16).isActive = true
-        image.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        image.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        image.heightAnchor.constraint(equalToConstant: 55).isActive = true
+        image.widthAnchor.constraint(equalToConstant: 55).isActive = true
         
         stackViewVertical.topAnchor.constraint(equalTo: image.topAnchor).isActive = true
         stackViewVertical.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 16).isActive = true
-        stackViewVertical.trailingAnchor.constraint(equalTo: cardView.trailingAnchor).isActive = true
+        stackViewVertical.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -8).isActive = true
         stackViewVertical.bottomAnchor.constraint(equalTo: image.bottomAnchor).isActive = true
         
-        titleLabel.topAnchor.constraint(equalTo: stackViewVertical.topAnchor).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: stackViewVertical.leadingAnchor, constant: 16).isActive = true
-//        
-        descLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5).isActive = true
-        descLabel.leadingAnchor.constraint(equalTo: stackViewVertical.leadingAnchor, constant: 16).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: stackViewVertical.topAnchor, constant: 3).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: stackViewVertical.leadingAnchor, constant: 8).isActive = true
+
+        descLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 7).isActive = true
+        descLabel.leadingAnchor.constraint(equalTo: stackViewVertical.leadingAnchor, constant: 8).isActive = true
+        descLabel.trailingAnchor.constraint(equalTo: stackViewVertical.trailingAnchor, constant: -8).isActive = true
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -94,5 +96,17 @@ class OrdersSnacksTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(category: PopularsSpecials) {
+        image.kf.setImage(with: category.image?.asURL)
+        titleLabel.text = category.name
+        descLabel.text = category.description
+    }
+    
+    func configure(order: Order) {
+        image.kf.setImage(with: order.dish?.image?.asURL)
+        titleLabel.text = order.dish?.name
+        descLabel.text = order.name
     }
 }

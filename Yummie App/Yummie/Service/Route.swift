@@ -12,12 +12,15 @@ enum Route {
     static let baseUrl = "https://yummie.glitch.me"
     
     case fetchAllFoods
+    case fetchCategoryDishes(String)
     
     var description: String {
         
         switch self {
         case .fetchAllFoods:
             return "/dish-categories"
+        case.fetchCategoryDishes(let categoryId):
+            return "/dishes/\(categoryId)"
         }
     }
 }

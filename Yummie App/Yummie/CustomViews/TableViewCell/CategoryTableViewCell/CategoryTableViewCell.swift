@@ -7,11 +7,18 @@
 
 import UIKit
 
+protocol CategoryTableViewCellDelegate: AnyObject {
+    func didSelectItem(_ category: Category)
+}
+
 class CategoryTableViewCell: UITableViewCell {
     
     static let identifier = "CategoryTableViewCell"
     
     private var categories: [Category] = []
+    var dishes: [PopularsSpecials] = []
+    
+    weak var delegate: CategoryTableViewCellDelegate?
     
     let titleLabel = TitleLabel( customText: "Food Category")
     
@@ -81,6 +88,11 @@ extension CategoryTableViewCell: UICollectionViewDelegateFlowLayout, UICollectio
         func collectionView(_ collectionView: UICollectionView, layout UICollectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             return CGSize(width: 150, height: 56)
         }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let categories = categories[indexPath.item]
+        delegate?.didSelectItem(categories)
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
             // Return the minimum spacing between lines in the collection view.

@@ -17,6 +17,9 @@ class TextFieldTableViewCell: UITableViewCell {
         text.borderStyle = .roundedRect
         text.textAlignment = .natural
         text.placeholder = "Enter your name"
+        text.isUserInteractionEnabled = true
+        text.keyboardType = .default
+        text.becomeFirstResponder()
         return text
     }()
     
