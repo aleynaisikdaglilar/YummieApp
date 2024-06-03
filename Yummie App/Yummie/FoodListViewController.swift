@@ -41,6 +41,11 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        prepareUI()
         
         SVProgressHUD.show()
         NetworkService.shared.fetchCategoryDishes(categoryId: selectedItem?.id ?? "") { [weak self] result in
@@ -53,11 +58,6 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
                 SVProgressHUD.showError(withStatus: error.localizedDescription)
             }
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        prepareUI()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -11,15 +11,13 @@ class TextFieldTableViewCell: UITableViewCell {
     
     static let identifier = "TextFieldTableViewCell"
     
-    private lazy var textField: UITextField = {
+    lazy var textField: UITextField = {
         let text = UITextField()
         text.translatesAutoresizingMaskIntoConstraints = false
         text.borderStyle = .roundedRect
         text.textAlignment = .natural
         text.placeholder = "Enter your name"
         text.isUserInteractionEnabled = true
-        text.keyboardType = .default
-        text.becomeFirstResponder()
         return text
     }()
     
@@ -34,7 +32,6 @@ class TextFieldTableViewCell: UITableViewCell {
         textField.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         textField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         textField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
-
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -44,5 +41,9 @@ class TextFieldTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(with text: String?) {
+        textField.text = text
     }
 }

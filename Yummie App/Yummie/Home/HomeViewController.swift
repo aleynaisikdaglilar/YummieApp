@@ -7,19 +7,7 @@
 import UIKit
 import SVProgressHUD
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PopularDishesTableViewCellDelegate, ChefsSpecialsTableViewCellDelegate, CategoryTableViewCellDelegate {
-    
-    func didSelectItem(_ category: Category) {
-        let list = FoodListViewController()
-        list.selectedItem = category
-        navigationController?.pushViewController(list, animated: true)
-    }
-    
-    func didSelectItem(_ popularSpecials: PopularsSpecials) {
-        let placeOrder = PlaceOrderViewController()
-        placeOrder.selectedItem = popularSpecials
-        navigationController?.pushViewController(placeOrder, animated: true)
-    }
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var categories: [Category] = []
     var populars: [PopularsSpecials] = []
@@ -39,8 +27,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }()
     
     @objc func ordersButtonAction() {
-        let foodList = FoodListViewController()
-        navigationController?.pushViewController(foodList, animated: true)
+        let ordersList = OrdersListViewController()
+        navigationController?.pushViewController(ordersList, animated: true)
     }
     
     private func prepareUI() {
@@ -133,5 +121,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension HomeViewController: PopularDishesTableViewCellDelegate, ChefsSpecialsTableViewCellDelegate, CategoryTableViewCellDelegate {
+   
+    func didSelectItem(_ category: Category) {
+        let list = FoodListViewController()
+        list.selectedItem = category
+        navigationController?.pushViewController(list, animated: true)
+    }
+    
+    func didSelectItem(_ popularSpecials: PopularsSpecials) {
+        let placeOrder = PlaceOrderViewController()
+        placeOrder.selectedItem = popularSpecials
+        navigationController?.pushViewController(placeOrder, animated: true)
     }
 }

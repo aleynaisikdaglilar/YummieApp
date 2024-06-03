@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class PlaceOrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var selectedItem: PopularsSpecials?
+    var textFieldText: String?
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -75,9 +77,11 @@ class PlaceOrderViewController: UIViewController, UITableViewDelegate, UITableVi
             return cell
         } else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TextFieldTableViewCell.identifier, for: indexPath) as! TextFieldTableViewCell
+            cell.configure(with: textFieldText)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: ButtonTableViewCell.identifier, for: indexPath) as! ButtonTableViewCell
+            cell.delegate = self
             return cell
         }
     }
@@ -99,3 +103,26 @@ class PlaceOrderViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 }
 
+extension PlaceOrderViewController: ButtonTableViewCellDelegate {
+    func buttonTableViewCellDidTapButton(_ cell: ButtonTableViewCell) {
+        if let indexPath = tableView.indexPath(for: cell),
+           let textFieldCell = tableView.cellForRow(at: IndexPath(row: 3, section: indexPath.section)) as? TextFieldTableViewCell {
+            
+            guard let name = textFieldCell.textField.text?.trimmingCharacters(in: .whitespaces), !name.isEmpty else {
+                SVProgressHUD.showError(withStatus: "Please enter your name")
+                return
+            }
+            
+            SVProgressHUD.show(withStatus: "Placing Order...")
+            NetworkService.shared.placeOrder(dishId: selectedItem?.id ?? "", name: name) { [self] result in
+                print(selectedItem?.id, self.selectedItem?.name, name)
+                switch result {
+                case .success(_):
+                    SVProgressHUD.showSuccess(withStatus: "Your order has been received. 👩🏻‍🍳")
+                case .failure(let error):
+                    SVProgressHUD.showError(withStatus: error.localizedDescription)
+                }
+            }
+        }
+    }
+}

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class OrdersListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -33,32 +34,34 @@ class OrdersListViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.delegate = self
         
         view.addSubview(tableView)
-        
-      
     
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
-    
-      
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareUI()
+        
+        SVProgressHUD.show()
+        NetworkService.shared.fetchOrders { [weak self] result in
+            switch result {
+                
+            case .success(let orders):
+                SVProgressHUD.dismiss()
+                self?.orders = orders
+                self?.tableView.reloadData()
+            case .failure(let error):
+                SVProgressHUD.showError(withStatus: error.localizedDescription)
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return orders.count
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let controller = PlaceOrderViewController()
-//        controller.selectedItem = dishes[indexPath.row]
-//        navigationController?.pushViewController(controller, animated: true)
-//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -67,11 +70,9 @@ class OrdersListViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let controller = PlaceOrderViewController()
-//        controller.selectedItem = orders[indexPath.row]
-//        navigationController?.pushViewController(controller, animated: true)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100

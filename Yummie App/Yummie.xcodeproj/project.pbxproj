@@ -197,7 +197,6 @@
 		EC032A672B3AF0A3005CFB5F = {
 			isa = PBXGroup;
 			children = (
-				744CBB5A2C07D48900190C46 /* OrdersListViewController.swift */,
 				EC032A722B3AF0A3005CFB5F /* Yummie */,
 				EC032A712B3AF0A3005CFB5F /* Products */,
 				7416D72A2BFE399600C43FB7 /* Frameworks */,
@@ -225,6 +224,7 @@
 				EC032A732B3AF0A4005CFB5F /* AppDelegate.swift */,
 				EC032A752B3AF0A4005CFB5F /* SceneDelegate.swift */,
 				749D63E22BCDD56F000814BB /* PlaceOrderViewController.swift */,
+				744CBB5A2C07D48900190C46 /* OrdersListViewController.swift */,
 				EC032A772B3AF0A4005CFB5F /* ViewController.swift */,
 				EC032A7C2B3AF0A7005CFB5F /* Assets.xcassets */,
 				EC032A7E2B3AF0A7005CFB5F /* LaunchScreen.storyboard */,
