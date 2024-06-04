@@ -1,8 +1,8 @@
 Ordering application for restaurants
 
-MVVM
-REST API
-IQKeyboardManagerSwift  --> Swift Package Manager
-Kingfisher  --> Swift Package Manager
-SVProgressHUD --> Swift Package Manager
+<p> MVVM </p>
+<p> REST API </p>
+<p> IQKeyboardManagerSwift  --> Swift Package Manager </p>
+<p> Kingfisher  --> Swift Package Manager </p>
+<p> SVProgressHUD --> Swift Package Manager </p>
 
