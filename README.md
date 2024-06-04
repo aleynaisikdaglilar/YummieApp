@@ -1,3 +1,8 @@
-It is a project that lists foods divided into categories. There is a visual and description of the food in detail.
-MVVM is used.
-Images will be added at the end of the project.
+Ordering application for restaurants
+
+MVVM
+REST API
+IQKeyboardManagerSwift  --> Swift Package Manager
+Kingfisher  --> Swift Package Manager
+SVProgressHUD --> Swift Package Manager
+
