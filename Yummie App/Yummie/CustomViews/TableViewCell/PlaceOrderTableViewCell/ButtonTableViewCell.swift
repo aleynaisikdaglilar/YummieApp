@@ -12,6 +12,11 @@ protocol ButtonTableViewCellDelegate: AnyObject {
     func buttonTableViewCellDidTapButton(_ cell: ButtonTableViewCell)
 }
 
+private enum Constant {
+    static let buttonBackgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
+    static let buttonCornerRadius = CGFloat(10)
+}
+
 class ButtonTableViewCell: UITableViewCell {
     
     static let identifier = "ButtonTableViewCell"
@@ -22,11 +27,11 @@ class ButtonTableViewCell: UITableViewCell {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Place Order", for: .normal)
-        button.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
+        button.backgroundColor = Constant.buttonBackgroundColor
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = Constant.buttonCornerRadius
         return button
     }()
     

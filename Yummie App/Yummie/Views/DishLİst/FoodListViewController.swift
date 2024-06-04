@@ -1,20 +1,22 @@
 //
-//  OrdersListViewController.swift
+//  FoodListViewController.swift
 //  Yummie
 //
-//  Created by Aleyna Işıkdağlılar on 30.05.2024.
+//  Created by Aleyna Işıkdağlılar on 25.04.2024.
 //
 
 import UIKit
 import SVProgressHUD
 
-class OrdersListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class FoodListViewController: UIViewController {
+    
     private enum Constant {
         static let backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
     }
     
-    var orders: [Order] = []
+    var dishes: [PopularsSpecials] = []
+    
+    var selectedItem: Category?
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -27,13 +29,13 @@ class OrdersListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     private func prepareUI() {
         
-        title = "Orders"
-    
         view.backgroundColor = Constant.backgroundColor
         tableView.dataSource = self
         tableView.delegate = self
         
         view.addSubview(tableView)
+        
+        title = selectedItem?.title
     
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -44,45 +46,41 @@ class OrdersListViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareUI()
-        SVProgressHUD.show()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         
-        NetworkService.shared.fetchOrders { [weak self] result in
+        SVProgressHUD.show()
+        NetworkService.shared.fetchCategoryDishes(categoryId: selectedItem?.id ?? "") { [weak self] result in
             switch result {
-                
-            case .success(let orders):
+            case .success(let dishes):
                 SVProgressHUD.dismiss()
-                self?.orders = orders
+                self?.dishes = dishes
                 self?.tableView.reloadData()
             case .failure(let error):
                 SVProgressHUD.showError(withStatus: error.localizedDescription)
             }
         }
     }
+}
+
+extension FoodListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return orders.count
+        return dishes.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = PlaceOrderViewController()
+        controller.selectedItem = dishes[indexPath.row]
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: OrdersCategoriesTableViewCell.identifier, for: indexPath) as! OrdersCategoriesTableViewCell
-        cell.configure(order: orders[indexPath.row])
+        cell.configure(category: dishes[indexPath.row])
         return cell
-        
-       
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = PlaceOrderViewController()
-        controller.selectedItem = orders[indexPath.row].dish
-        navigationController?.pushViewController(controller, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-
 }

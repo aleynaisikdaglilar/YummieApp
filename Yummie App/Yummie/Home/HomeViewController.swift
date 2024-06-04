@@ -7,7 +7,7 @@
 import UIKit
 import SVProgressHUD
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController {
     
     var categories: [Category] = []
     var populars: [PopularsSpecials] = []
@@ -75,7 +75,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 SVProgressHUD.showError(withStatus: error.localizedDescription)
             }
         }
-        
     }
     
     private func registerCells() {
@@ -83,7 +82,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.register(ChefsSpecialsTableViewCell.self, forCellReuseIdentifier: ChefsSpecialsTableViewCell.identifier)
         tableView.register(PopularDishesTableViewCell.self, forCellReuseIdentifier: PopularDishesTableViewCell.identifier)
     }
-    
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+ 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }

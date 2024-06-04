@@ -178,9 +178,6 @@ extension ViewController: UIScrollViewDelegate {
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         scrollingFinished(scrollView: scrollView)
-        //        let width = scrollView.frame.width
-        //        currentPage = Int(scrollView.contentOffset.x / width)
-        //        pageControl.currentPage = currentPage
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

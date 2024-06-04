@@ -11,10 +11,7 @@ final class OnboardingCollectionViewCell: UICollectionViewCell {
     
     private enum Constant {
         static let stackViewLayoutMargins = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
-//        static let subTitleLabelFontSize = INGFont(size: 22)
-//        static let descriptionLabelFontSize = INGFont(size: 15)
         static let stackViewSpacing = CGFloat(10.0)
-//        static let stackViewSetCustomSpacing = CGFloat(20.0)
     }
     
     static let identifier = "OnboardingCollectionViewCell"
@@ -68,7 +65,6 @@ final class OnboardingCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(stackView)
         
         imageView.heightAnchor.constraint(equalToConstant: 400).isActive = true
-//        stackView.setCustomSpacing(Constant.stackViewSetCustomSpacing, after: imageView)
         stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 50).isActive = true
         stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true

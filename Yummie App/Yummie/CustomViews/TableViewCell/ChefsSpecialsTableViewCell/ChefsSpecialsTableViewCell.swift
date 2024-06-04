@@ -13,10 +13,14 @@ protocol ChefsSpecialsTableViewCellDelegate: AnyObject {
 
 class ChefsSpecialsTableViewCell: UITableViewCell {
     
+    private enum Constant {
+        static let backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+        static let contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+    }
+    
     static let identifier = "ChefsSpecialsTableViewCell"
     
     private var specials: [PopularsSpecials] = []
-    
     weak var delegate: ChefsSpecialsTableViewCellDelegate?
     
     let titleLabel = TitleLabel( customText: "Chef's Specials")
@@ -35,8 +39,8 @@ class ChefsSpecialsTableViewCell: UITableViewCell {
         collectionView.delegate = self
         collectionView.isPagingEnabled = false
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        collectionView.backgroundColor = Constant.backgroundColor
+        collectionView.contentInset = Constant.contentInset
         return collectionView
     }()
     
@@ -103,5 +107,4 @@ extension ChefsSpecialsTableViewCell: UICollectionViewDelegateFlowLayout, UIColl
         // Return the minimum spacing between items in the same row.
         return 20 // Adjust as needed
     }
-    
 }

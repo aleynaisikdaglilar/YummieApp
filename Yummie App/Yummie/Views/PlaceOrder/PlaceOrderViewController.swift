@@ -8,7 +8,11 @@
 import UIKit
 import SVProgressHUD
 
-class PlaceOrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PlaceOrderViewController: UIViewController {
+    
+    private enum Constant {
+        static let backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+    }
     
     var selectedItem: PopularsSpecials?
     var textFieldText: String?
@@ -18,7 +22,7 @@ class PlaceOrderViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
         tableView.contentInsetAdjustmentBehavior = .never
-        tableView.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+        tableView.backgroundColor = Constant.backgroundColor
         return tableView
     }()
     
@@ -32,7 +36,7 @@ class PlaceOrderViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     private func prepareUI() {
-        view.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+        view.backgroundColor = Constant.backgroundColor
         view.insetsLayoutMarginsFromSafeArea = false
         tableView.dataSource = self
         tableView.delegate = self
@@ -50,6 +54,32 @@ class PlaceOrderViewController: UIViewController, UITableViewDelegate, UITableVi
         registerCells()
         prepareUI()
     }
+}
+
+extension PlaceOrderViewController: ButtonTableViewCellDelegate {
+    func buttonTableViewCellDidTapButton(_ cell: ButtonTableViewCell) {
+        if let indexPath = tableView.indexPath(for: cell),
+           let textFieldCell = tableView.cellForRow(at: IndexPath(row: 3, section: indexPath.section)) as? TextFieldTableViewCell {
+            
+            guard let name = textFieldCell.textField.text?.trimmingCharacters(in: .whitespaces), !name.isEmpty else {
+                SVProgressHUD.showError(withStatus: "Please enter your name")
+                return
+            }
+            
+            SVProgressHUD.show(withStatus: "Placing Order...")
+            NetworkService.shared.placeOrder(dishId: selectedItem?.id ?? "", name: name) { [self] result in
+                switch result {
+                case .success(_):
+                    SVProgressHUD.showSuccess(withStatus: "Your order has been received. 👩🏻‍🍳")
+                case .failure(let error):
+                    SVProgressHUD.showError(withStatus: error.localizedDescription)
+                }
+            }
+        }
+    }
+}
+
+extension PlaceOrderViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
@@ -99,30 +129,6 @@ class PlaceOrderViewController: UIViewController, UITableViewDelegate, UITableVi
             return 80
         } else {
             return 50 // Default height for other rows
-        }
-    }
-}
-
-extension PlaceOrderViewController: ButtonTableViewCellDelegate {
-    func buttonTableViewCellDidTapButton(_ cell: ButtonTableViewCell) {
-        if let indexPath = tableView.indexPath(for: cell),
-           let textFieldCell = tableView.cellForRow(at: IndexPath(row: 3, section: indexPath.section)) as? TextFieldTableViewCell {
-            
-            guard let name = textFieldCell.textField.text?.trimmingCharacters(in: .whitespaces), !name.isEmpty else {
-                SVProgressHUD.showError(withStatus: "Please enter your name")
-                return
-            }
-            
-            SVProgressHUD.show(withStatus: "Placing Order...")
-            NetworkService.shared.placeOrder(dishId: selectedItem?.id ?? "", name: name) { [self] result in
-                print(selectedItem?.id, self.selectedItem?.name, name)
-                switch result {
-                case .success(_):
-                    SVProgressHUD.showSuccess(withStatus: "Your order has been received. 👩🏻‍🍳")
-                case .failure(let error):
-                    SVProgressHUD.showError(withStatus: error.localizedDescription)
-                }
-            }
         }
     }
 }

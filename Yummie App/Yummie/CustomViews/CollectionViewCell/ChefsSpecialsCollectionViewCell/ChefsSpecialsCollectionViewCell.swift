@@ -8,6 +8,11 @@
 import UIKit
 
 final class ChefsSpecialsCollectionViewCell: UICollectionViewCell {
+    
+    private enum Constant {
+        static let imageCornerRadius = CGFloat(5)
+        static let sVSpacing = CGFloat(8)
+    }
 
     static let identifier = "ChefsSpecialsCollectionViewCell"
     
@@ -18,7 +23,7 @@ final class ChefsSpecialsCollectionViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
-        imageView.cornerRadius = 5
+        imageView.cornerRadius = Constant.imageCornerRadius
         return imageView
     }()
     
@@ -27,7 +32,7 @@ final class ChefsSpecialsCollectionViewCell: UICollectionViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = NSLayoutConstraint.Axis.vertical
         stackView.distribution = .fillEqually
-        stackView.spacing = 8
+        stackView.spacing = Constant.sVSpacing
         stackView.isLayoutMarginsRelativeArrangement = true
         return stackView
     }()

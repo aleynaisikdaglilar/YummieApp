@@ -42,7 +42,6 @@ struct NetworkService {
             if let data = data {
                 result = .success(data)
                 let responseString = String(data: data, encoding: .utf8) ?? "Could not stringify our data"
-//                print("The response is : \(responseString)")
             } else if let error = error {
                 result = .failure(error)
                 print("The error is : \(error.localizedDescription)")
@@ -86,7 +85,6 @@ struct NetworkService {
         }
     }
     
-    //    URLRequest? anyela
     /// This function helps us to generate urlRequest
     /// - Parameters:
     ///   - route: the path the resource in the backend
@@ -112,8 +110,6 @@ struct NetworkService {
                 urlComponent?.queryItems = params.map { URLQueryItem(name: $0, value: "\($1)") }
                 urlRequest.url = urlComponent?.url
             case .post:
-                //                anyela
-                //                let bodyData = try? JSONSerialization.data(withJSONObject: parameters, options: [])
                 let bodyData = try? JSONSerialization.data(withJSONObject: params)
                 urlRequest.httpBody = bodyData
                 

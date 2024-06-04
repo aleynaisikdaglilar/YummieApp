@@ -8,7 +8,7 @@
 import UIKit
 import SVProgressHUD
 
-class FoodListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FoodListViewController: UIViewController {
     
     private enum Constant {
         static let backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
@@ -59,6 +59,9 @@ class FoodListViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
     }
+}
+
+extension FoodListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dishes.count

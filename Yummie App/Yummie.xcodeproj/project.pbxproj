@@ -10,14 +10,12 @@
 		7421E3CE2BD9B1D300D6522F /* FoodListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421E3CD2BD9B1D300D6522F /* FoodListViewController.swift */; };
 		7438FBF12BFE409100C9913A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7438FBF02BFE409100C9913A /* Kingfisher */; };
 		7438FBF72BFE77E400C9913A /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 7438FBF62BFE77E400C9913A /* SVProgressHUD */; };
-		744CBB542C013F6500190C46 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744CBB532C013F6500190C46 /* UIViewController+Extension.swift */; };
 		744CBB572C07683E00190C46 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 744CBB562C07683E00190C46 /* IQKeyboardManagerSwift */; };
 		744CBB592C07D3D300190C46 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744CBB582C07D3D300190C46 /* Order.swift */; };
 		744CBB5B2C07D48900190C46 /* OrdersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744CBB5A2C07D48900190C46 /* OrdersListViewController.swift */; };
 		744CBB7D2C0E6D8200190C46 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744CBB7C2C0E6D8200190C46 /* UserDefaults+Extension.swift */; };
 		745111942BE2663400016088 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745111932BE2663400016088 /* String + Extension.swift */; };
 		745111962BE266CE00016088 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745111952BE266CE00016088 /* UIView + Extension.swift */; };
-		74897B602BEEBDBE0052C091 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 74897B5E2BEEBDBE0052C091 /* Localizable.strings */; };
 		748D8ECB2BDA923C000D34FB /* OrdersCategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748D8ECA2BDA923C000D34FB /* OrdersCategoriesTableViewCell.swift */; };
 		749D63D42BB8DAA6000814BB /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749D63D32BB8DAA6000814BB /* CategoryTableViewCell.swift */; };
 		749D63D62BBB4BFB000814BB /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749D63D52BBB4BFA000814BB /* TitleLabel.swift */; };
@@ -47,26 +45,21 @@
 		EC2DD9942B4D602C005D72DA /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2DD9932B4D602C005D72DA /* Onboarding.swift */; };
 		EC68F6662BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC68F6642BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.swift */; };
 		EC68F6672BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC68F6652BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.xib */; };
-		EC68F66B2BA0FC8100BD5297 /* PopularDishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC68F66A2BA0FC8100BD5297 /* PopularDishDetailViewController.swift */; };
 		ECED05BB2B8CB0CB006C8491 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED05BA2B8CB0CB006C8491 /* HomeViewController.swift */; };
 		ECED05C12B91C6F5006C8491 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED05BF2B91C6F5006C8491 /* CategoryCollectionViewCell.swift */; };
 		ECED05C22B91C6F5006C8491 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECED05C02B91C6F5006C8491 /* CategoryCollectionViewCell.xib */; };
 		ECED05C62B94F833006C8491 /* PopularDishesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED05C42B94F833006C8491 /* PopularDishesCollectionViewCell.swift */; };
 		ECED05C72B94F833006C8491 /* PopularDishesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECED05C52B94F833006C8491 /* PopularDishesCollectionViewCell.xib */; };
-		ECF42D612B7B703100A3CF63 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ECF42D602B7B703100A3CF63 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		741D35F42BE8E2D80088B42E /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		7421E3CD2BD9B1D300D6522F /* FoodListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListViewController.swift; sourceTree = "<group>"; };
-		744CBB532C013F6500190C46 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		744CBB582C07D3D300190C46 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		744CBB5A2C07D48900190C46 /* OrdersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListViewController.swift; sourceTree = "<group>"; };
 		744CBB7C2C0E6D8200190C46 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		745111932BE2663400016088 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
 		745111952BE266CE00016088 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
-		74897B5F2BEEBDBE0052C091 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		74897B612BEEBDE80052C091 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		748D8ECA2BDA923C000D34FB /* OrdersCategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCategoriesTableViewCell.swift; sourceTree = "<group>"; };
 		749D63D32BB8DAA6000814BB /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		749D63D52BBB4BFA000814BB /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
@@ -98,13 +91,11 @@
 		EC2DD9932B4D602C005D72DA /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		EC68F6642BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefsSpecialsCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC68F6652BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChefsSpecialsCollectionViewCell.xib; sourceTree = "<group>"; };
-		EC68F66A2BA0FC8100BD5297 /* PopularDishDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDishDetailViewController.swift; sourceTree = "<group>"; };
 		ECED05BA2B8CB0CB006C8491 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ECED05BF2B91C6F5006C8491 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECED05C02B91C6F5006C8491 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		ECED05C42B94F833006C8491 /* PopularDishesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDishesCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECED05C52B94F833006C8491 /* PopularDishesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularDishesCollectionViewCell.xib; sourceTree = "<group>"; };
-		ECF42D602B7B703100A3CF63 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +117,31 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		744CBB7E2C0F3A4800190C46 /* PlaceOrder */ = {
+			isa = PBXGroup;
+			children = (
+				749D63E22BCDD56F000814BB /* PlaceOrderViewController.swift */,
+			);
+			path = PlaceOrder;
+			sourceTree = "<group>";
+		};
+		744CBB7F2C0F3A5600190C46 /* DishList */ = {
+			isa = PBXGroup;
+			children = (
+				7421E3CD2BD9B1D300D6522F /* FoodListViewController.swift */,
+			);
+			name = DishList;
+			path = "DishLİst";
+			sourceTree = "<group>";
+		};
+		744CBB802C0F3A6F00190C46 /* OrdersList */ = {
+			isa = PBXGroup;
+			children = (
+				744CBB5A2C07D48900190C46 /* OrdersListViewController.swift */,
+			);
+			path = OrdersList;
 			sourceTree = "<group>";
 		};
 		748D8EC92BDA9218000D34FB /* OrdersCategoriesTableViewCell */ = {
@@ -218,21 +234,15 @@
 			children = (
 				74D6BC9A2BF26C7400863E80 /* Service */,
 				ECED05BC2B8CB954006C8491 /* Home */,
-				ECF42D5F2B7B701F00A3CF63 /* Localizable */,
 				EC40A2EB2B645FD100B38411 /* Extensions */,
 				EC032A8A2B434509005CFB5F /* CustomViews */,
 				EC032A882B4344EE005CFB5F /* Views */,
 				EC032A872B4344D4005CFB5F /* Models */,
 				EC032A732B3AF0A4005CFB5F /* AppDelegate.swift */,
 				EC032A752B3AF0A4005CFB5F /* SceneDelegate.swift */,
-				749D63E22BCDD56F000814BB /* PlaceOrderViewController.swift */,
-				744CBB5A2C07D48900190C46 /* OrdersListViewController.swift */,
-				EC032A772B3AF0A4005CFB5F /* ViewController.swift */,
 				EC032A7C2B3AF0A7005CFB5F /* Assets.xcassets */,
 				EC032A7E2B3AF0A7005CFB5F /* LaunchScreen.storyboard */,
 				EC032A812B3AF0A7005CFB5F /* Info.plist */,
-				7421E3CD2BD9B1D300D6522F /* FoodListViewController.swift */,
-				74897B5E2BEEBDBE0052C091 /* Localizable.strings */,
 			);
 			path = Yummie;
 			sourceTree = "<group>";
@@ -252,7 +262,9 @@
 		EC032A882B4344EE005CFB5F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EC68F6682BA0FC3900BD5297 /* PopularDishDetail */,
+				744CBB802C0F3A6F00190C46 /* OrdersList */,
+				744CBB7F2C0F3A5600190C46 /* DishList */,
+				744CBB7E2C0F3A4800190C46 /* PlaceOrder */,
 				EC032A8B2B43451E005CFB5F /* Onboarding */,
 			);
 			path = Views;
@@ -270,6 +282,7 @@
 		EC032A8B2B43451E005CFB5F /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				EC032A772B3AF0A4005CFB5F /* ViewController.swift */,
 				EC2DD9912B4C3065005D72DA /* OnboardingCollectionViewCell.swift */,
 			);
 			path = Onboarding;
@@ -282,7 +295,6 @@
 				749D63D72BBB5E1F000814BB /* CustomCardView.swift */,
 				745111932BE2663400016088 /* String + Extension.swift */,
 				745111952BE266CE00016088 /* UIView + Extension.swift */,
-				744CBB532C013F6500190C46 /* UIViewController+Extension.swift */,
 				744CBB7C2C0E6D8200190C46 /* UserDefaults+Extension.swift */,
 			);
 			path = Extensions;
@@ -295,14 +307,6 @@
 				EC68F6652BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.xib */,
 			);
 			path = ChefsSpecialsCollectionViewCell;
-			sourceTree = "<group>";
-		};
-		EC68F6682BA0FC3900BD5297 /* PopularDishDetail */ = {
-			isa = PBXGroup;
-			children = (
-				EC68F66A2BA0FC8100BD5297 /* PopularDishDetailViewController.swift */,
-			);
-			path = PopularDishDetail;
 			sourceTree = "<group>";
 		};
 		ECED05BC2B8CB954006C8491 /* Home */ = {
@@ -339,14 +343,6 @@
 				ECED05C52B94F833006C8491 /* PopularDishesCollectionViewCell.xib */,
 			);
 			path = PopularDishesCollectionViewCell;
-			sourceTree = "<group>";
-		};
-		ECF42D5F2B7B701F00A3CF63 /* Localizable */ = {
-			isa = PBXGroup;
-			children = (
-				ECF42D602B7B703100A3CF63 /* Localizable.strings */,
-			);
-			path = Localizable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,8 +418,6 @@
 				EC032A802B3AF0A7005CFB5F /* LaunchScreen.storyboard in Resources */,
 				ECED05C72B94F833006C8491 /* PopularDishesCollectionViewCell.xib in Resources */,
 				ECED05C22B91C6F5006C8491 /* CategoryCollectionViewCell.xib in Resources */,
-				74897B602BEEBDBE0052C091 /* Localizable.strings in Resources */,
-				ECF42D612B7B703100A3CF63 /* Localizable.strings in Resources */,
 				EC68F6672BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.xib in Resources */,
 				EC032A7D2B3AF0A7005CFB5F /* Assets.xcassets in Resources */,
 			);
@@ -440,7 +434,6 @@
 				749D63EE2BCF12C3000814BB /* ButtonTableViewCell.swift in Sources */,
 				74D6BC9E2BF2781900863E80 /* Route.swift in Sources */,
 				7421E3CE2BD9B1D300D6522F /* FoodListViewController.swift in Sources */,
-				744CBB542C013F6500190C46 /* UIViewController+Extension.swift in Sources */,
 				EC032A742B3AF0A4005CFB5F /* AppDelegate.swift in Sources */,
 				749D63DE2BC17B5E000814BB /* PopularDishesTableViewCell.swift in Sources */,
 				744CBB5B2C07D48900190C46 /* OrdersListViewController.swift in Sources */,
@@ -454,7 +447,6 @@
 				EC68F6662BA095F900BD5297 /* ChefsSpecialsCollectionViewCell.swift in Sources */,
 				74D6BC932BF25A7300863E80 /* PopularsSpecials.swift in Sources */,
 				745111942BE2663400016088 /* String + Extension.swift in Sources */,
-				EC68F66B2BA0FC8100BD5297 /* PopularDishDetailViewController.swift in Sources */,
 				ECED05C12B91C6F5006C8491 /* CategoryCollectionViewCell.swift in Sources */,
 				749D63EC2BCF1134000814BB /* TextFieldTableViewCell.swift in Sources */,
 				EC2DD9922B4C3065005D72DA /* OnboardingCollectionViewCell.swift in Sources */,
@@ -479,15 +471,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		74897B5E2BEEBDBE0052C091 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				74897B5F2BEEBDBE0052C091 /* en */,
-				74897B612BEEBDE80052C091 /* tr */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
 		EC032A7E2B3AF0A7005CFB5F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

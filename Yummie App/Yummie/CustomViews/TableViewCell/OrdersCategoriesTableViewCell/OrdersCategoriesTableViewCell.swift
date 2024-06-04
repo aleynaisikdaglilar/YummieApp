@@ -10,8 +10,14 @@ import UIKit
 class OrdersCategoriesTableViewCell: UITableViewCell {
     
     static let identifier = "OrdersCategoriesTableViewCell"
-
+    
     let cardView = CustomCardView()
+    
+    private enum Constant {
+        static let backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+        static let imageCornerRadius = CGFloat(5)
+        static let sVSpacing = CGFloat(8)
+    }
     
     private lazy var image: UIImageView = {
         let imageView = UIImageView()
@@ -19,7 +25,7 @@ class OrdersCategoriesTableViewCell: UITableViewCell {
         imageView.image = UIImage(named: "slide1")
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
-        imageView.cornerRadius = 5
+        imageView.cornerRadius = Constant.imageCornerRadius
         return imageView
     }()
     
@@ -27,7 +33,7 @@ class OrdersCategoriesTableViewCell: UITableViewCell {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = NSLayoutConstraint.Axis.vertical
-        stackView.spacing = 8
+        stackView.spacing = Constant.sVSpacing
         stackView.isLayoutMarginsRelativeArrangement = true
         return stackView
     }()
@@ -80,7 +86,7 @@ class OrdersCategoriesTableViewCell: UITableViewCell {
         
         titleLabel.topAnchor.constraint(equalTo: stackViewVertical.topAnchor, constant: 3).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: stackViewVertical.leadingAnchor, constant: 8).isActive = true
-
+        
         descLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 7).isActive = true
         descLabel.leadingAnchor.constraint(equalTo: stackViewVertical.leadingAnchor, constant: 8).isActive = true
         descLabel.trailingAnchor.constraint(equalTo: stackViewVertical.trailingAnchor, constant: -8).isActive = true
