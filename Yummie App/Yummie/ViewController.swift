@@ -190,6 +190,7 @@ extension ViewController: UIScrollViewDelegate {
         if currentPage == (OnboardingDataModel.PromoArray.count - 1) {
             stackView.isHidden = false
             nextButton.setTitle("Get Started", for: .normal)
+            UserDefaults.standard.hasOnboarded = true
         } else {
             nextButton.setTitle("Next", for: .normal)
         }

@@ -44,8 +44,11 @@ class OrdersListViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareUI()
-        
         SVProgressHUD.show()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
         NetworkService.shared.fetchOrders { [weak self] result in
             switch result {
                 
@@ -68,10 +71,14 @@ class OrdersListViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: OrdersCategoriesTableViewCell.identifier, for: indexPath) as! OrdersCategoriesTableViewCell
         cell.configure(order: orders[indexPath.row])
         return cell
+        
+       
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let controller = PlaceOrderViewController()
+        controller.selectedItem = orders[indexPath.row].dish
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
