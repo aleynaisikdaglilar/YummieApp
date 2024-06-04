@@ -48,14 +48,16 @@ class PopularDishesTableViewCell: UITableViewCell {
         contentView.addSubview(titleLabel)
         contentView.addSubview(popularDishesCollectionView)
         
-        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
-        
-        popularDishesCollectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
-        popularDishesCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0).isActive = true
-        popularDishesCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
-        popularDishesCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
+            
+            popularDishesCollectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            popularDishesCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
+            popularDishesCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
+            popularDishesCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
+        ])
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

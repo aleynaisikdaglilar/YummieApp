@@ -48,14 +48,16 @@ class ChefsSpecialsTableViewCell: UITableViewCell {
         contentView.addSubview(titleLabel)
         contentView.addSubview(chefsSpecialsCollectionView)
         
-        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
-        
-        chefsSpecialsCollectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
-        chefsSpecialsCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0).isActive = true
-        chefsSpecialsCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
-        chefsSpecialsCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
+            
+            chefsSpecialsCollectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            chefsSpecialsCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
+            chefsSpecialsCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
+            chefsSpecialsCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
+        ])
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

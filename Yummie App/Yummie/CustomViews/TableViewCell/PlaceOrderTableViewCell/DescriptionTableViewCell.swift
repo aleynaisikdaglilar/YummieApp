@@ -28,10 +28,12 @@ class DescriptionTableViewCell: UITableViewCell {
         
         contentView.addSubview(descriptionLabel)
         
-        descriptionLabel.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
-        descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
-        descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            descriptionLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

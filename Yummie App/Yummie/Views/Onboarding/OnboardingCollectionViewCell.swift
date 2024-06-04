@@ -64,11 +64,13 @@ final class OnboardingCollectionViewCell: UICollectionViewCell {
         stackView.addArrangedSubview(descriptionLabel)
         contentView.addSubview(stackView)
         
-        imageView.heightAnchor.constraint(equalToConstant: 400).isActive = true
-        stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 50).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        stackView.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            imageView.heightAnchor.constraint(equalToConstant: 400),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 50),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            stackView.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor)
+        ])
     }
     
     override init(frame: CGRect) {

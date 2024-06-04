@@ -68,28 +68,30 @@ class OrdersCategoriesTableViewCell: UITableViewCell {
         
         contentView.backgroundColor = .clear
         
-        cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
-        cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
-        cardView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        cardView.heightAnchor.constraint(equalToConstant: 82).isActive = true
-        cardView.widthAnchor.constraint(equalToConstant: 288).isActive = true
-        
-        image.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 16).isActive = true
-        image.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16).isActive = true
-        image.heightAnchor.constraint(equalToConstant: 55).isActive = true
-        image.widthAnchor.constraint(equalToConstant: 55).isActive = true
-        
-        stackViewVertical.topAnchor.constraint(equalTo: image.topAnchor).isActive = true
-        stackViewVertical.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 16).isActive = true
-        stackViewVertical.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -8).isActive = true
-        stackViewVertical.bottomAnchor.constraint(equalTo: image.bottomAnchor).isActive = true
-        
-        titleLabel.topAnchor.constraint(equalTo: stackViewVertical.topAnchor, constant: 3).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: stackViewVertical.leadingAnchor, constant: 8).isActive = true
-        
-        descLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 7).isActive = true
-        descLabel.leadingAnchor.constraint(equalTo: stackViewVertical.leadingAnchor, constant: 8).isActive = true
-        descLabel.trailingAnchor.constraint(equalTo: stackViewVertical.trailingAnchor, constant: -8).isActive = true
+        NSLayoutConstraint.activate([
+            cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            cardView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            cardView.heightAnchor.constraint(equalToConstant: 82),
+            cardView.widthAnchor.constraint(equalToConstant: 288),
+            
+            image.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 16),
+            image.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16),
+            image.heightAnchor.constraint(equalToConstant: 55),
+            image.widthAnchor.constraint(equalToConstant: 55),
+            
+            stackViewVertical.topAnchor.constraint(equalTo: image.topAnchor),
+            stackViewVertical.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 16),
+            stackViewVertical.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -8),
+            stackViewVertical.bottomAnchor.constraint(equalTo: image.bottomAnchor),
+            
+            titleLabel.topAnchor.constraint(equalTo: stackViewVertical.topAnchor, constant: 3),
+            titleLabel.leadingAnchor.constraint(equalTo: stackViewVertical.leadingAnchor, constant: 8),
+            
+            descLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 7),
+            descLabel.leadingAnchor.constraint(equalTo: stackViewVertical.leadingAnchor, constant: 8),
+            descLabel.trailingAnchor.constraint(equalTo: stackViewVertical.trailingAnchor, constant: -8)
+        ])
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

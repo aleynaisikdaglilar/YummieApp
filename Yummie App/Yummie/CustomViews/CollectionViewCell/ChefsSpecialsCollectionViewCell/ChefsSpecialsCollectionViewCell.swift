@@ -77,20 +77,22 @@ final class ChefsSpecialsCollectionViewCell: UICollectionViewCell {
         stackViewVertical.addArrangedSubview(specialsDescLabel)
         stackViewVertical.addArrangedSubview(specialsCaloriesLabel)
         
-        cardView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        cardView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        cardView.widthAnchor.constraint(equalToConstant: 330).isActive = true
-        
-        specialsImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16).isActive = true
-        specialsImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
-        specialsImageView.heightAnchor.constraint(equalToConstant: 68).isActive = true
-        specialsImageView.widthAnchor.constraint(equalToConstant: 68).isActive = true
-        
-        stackViewVertical.topAnchor.constraint(equalTo: specialsImageView.topAnchor).isActive = true
-        stackViewVertical.leadingAnchor.constraint(equalTo: specialsImageView.trailingAnchor, constant: 16).isActive = true
-        stackViewVertical.bottomAnchor.constraint(equalTo: specialsImageView.bottomAnchor).isActive = true
-        stackViewVertical.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -8).isActive = true
+        NSLayoutConstraint.activate([
+            cardView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            cardView.heightAnchor.constraint(equalToConstant: 100),
+            cardView.widthAnchor.constraint(equalToConstant: 330),
+            
+            specialsImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            specialsImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            specialsImageView.heightAnchor.constraint(equalToConstant: 68),
+            specialsImageView.widthAnchor.constraint(equalToConstant: 68),
+            
+            stackViewVertical.topAnchor.constraint(equalTo: specialsImageView.topAnchor),
+            stackViewVertical.leadingAnchor.constraint(equalTo: specialsImageView.trailingAnchor, constant: 16),
+            stackViewVertical.bottomAnchor.constraint(equalTo: specialsImageView.bottomAnchor),
+            stackViewVertical.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -8)
+        ])
     }
     
     

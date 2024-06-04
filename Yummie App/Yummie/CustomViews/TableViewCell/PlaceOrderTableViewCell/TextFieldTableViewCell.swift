@@ -28,10 +28,12 @@ class TextFieldTableViewCell: UITableViewCell {
         
         contentView.addSubview(textField)
         
-        textField.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        textField.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        textField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
-        textField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
+        NSLayoutConstraint.activate([
+            textField.heightAnchor.constraint(equalToConstant: 50),
+            textField.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            textField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            textField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
+        ])
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

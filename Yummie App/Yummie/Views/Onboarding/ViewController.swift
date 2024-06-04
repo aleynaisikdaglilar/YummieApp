@@ -119,19 +119,21 @@ final class ViewController: UIViewController {
         
         let safeGuide = self.view.safeAreaLayoutGuide
         
-        collectionView.topAnchor.constraint(equalTo: safeGuide.topAnchor).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: safeGuide.bottomAnchor, constant: -130).isActive = true
-        
-        pageControl.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 10).isActive = true
-        pageControl.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor).isActive = true
-        pageControl.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor).isActive = true
-        
-        nextButton.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        nextButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        nextButton.topAnchor.constraint(equalTo: pageControl.bottomAnchor, constant: 20).isActive = true
-        nextButton.centerXAnchor.constraint(equalTo: safeGuide.centerXAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: safeGuide.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: safeGuide.bottomAnchor, constant: -130),
+            
+            pageControl.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 10),
+            pageControl.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor),
+            pageControl.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor),
+            
+            nextButton.widthAnchor.constraint(equalToConstant: 150),
+            nextButton.heightAnchor.constraint(equalToConstant: 50),
+            nextButton.topAnchor.constraint(equalTo: pageControl.bottomAnchor, constant: 20),
+            nextButton.centerXAnchor.constraint(equalTo: safeGuide.centerXAnchor)
+        ])
     }
     
     override func viewDidLoad() {

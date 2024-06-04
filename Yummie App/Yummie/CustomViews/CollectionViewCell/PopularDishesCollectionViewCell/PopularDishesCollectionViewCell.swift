@@ -68,30 +68,33 @@ final class PopularDishesCollectionViewCell: UICollectionViewCell {
         cardView.addSubview(popularCaloriesLabel)
         cardView.addSubview(popularDescLabel)
         
-        cardView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        cardView.heightAnchor.constraint(equalToConstant: 290).isActive = true
-        cardView.widthAnchor.constraint(equalToConstant: 180).isActive = true
+        NSLayoutConstraint.activate([
         
-        stackViewVertical.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 8).isActive = true
-        stackViewVertical.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 8).isActive = true
-        stackViewVertical.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -8).isActive = true
-        stackViewVertical.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -8).isActive = true
-        
-        popularTitleLabel.topAnchor.constraint(equalTo: stackViewVertical.topAnchor).isActive = true
-        popularTitleLabel.centerXAnchor.constraint(equalTo: stackViewVertical.centerXAnchor).isActive = true
-        
-        popularImageView.leadingAnchor.constraint(equalTo: stackViewVertical.leadingAnchor).isActive = true
-        popularImageView.trailingAnchor.constraint(equalTo: stackViewVertical.trailingAnchor).isActive = true
-        popularImageView.topAnchor.constraint(equalTo: popularTitleLabel.bottomAnchor, constant: 6).isActive = true
-        popularImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-       
-        popularCaloriesLabel.topAnchor.constraint(equalTo: popularImageView.bottomAnchor, constant: 8).isActive = true
-        popularCaloriesLabel.leadingAnchor.constraint(equalTo: stackViewVertical.leadingAnchor).isActive = true
-       
-        popularDescLabel.topAnchor.constraint(equalTo: popularCaloriesLabel.bottomAnchor, constant: 8).isActive = true
-        popularDescLabel.leadingAnchor.constraint(equalTo: stackViewVertical.leadingAnchor).isActive = true
-        popularDescLabel.trailingAnchor.constraint(equalTo: stackViewVertical.trailingAnchor).isActive = true
+            cardView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            cardView.heightAnchor.constraint(equalToConstant: 290),
+            cardView.widthAnchor.constraint(equalToConstant: 180),
+            
+            stackViewVertical.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 8),
+            stackViewVertical.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 8),
+            stackViewVertical.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -8),
+            stackViewVertical.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -8),
+            
+            popularTitleLabel.topAnchor.constraint(equalTo: stackViewVertical.topAnchor),
+            popularTitleLabel.centerXAnchor.constraint(equalTo: stackViewVertical.centerXAnchor),
+            
+            popularImageView.leadingAnchor.constraint(equalTo: stackViewVertical.leadingAnchor),
+            popularImageView.trailingAnchor.constraint(equalTo: stackViewVertical.trailingAnchor),
+            popularImageView.topAnchor.constraint(equalTo: popularTitleLabel.bottomAnchor, constant: 6),
+            popularImageView.heightAnchor.constraint(equalToConstant: 200),
+           
+            popularCaloriesLabel.topAnchor.constraint(equalTo: popularImageView.bottomAnchor, constant: 8),
+            popularCaloriesLabel.leadingAnchor.constraint(equalTo: stackViewVertical.leadingAnchor),
+           
+            popularDescLabel.topAnchor.constraint(equalTo: popularCaloriesLabel.bottomAnchor, constant: 8),
+            popularDescLabel.leadingAnchor.constraint(equalTo: stackViewVertical.leadingAnchor),
+            popularDescLabel.trailingAnchor.constraint(equalTo: stackViewVertical.trailingAnchor)
+        ])
     }
     
     

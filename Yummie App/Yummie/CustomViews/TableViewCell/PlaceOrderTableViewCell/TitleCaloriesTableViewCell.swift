@@ -49,10 +49,12 @@ class TitleCaloriesTableViewCell: UITableViewCell {
         stackView.addArrangedSubview(caloriesLabel)
         contentView.addSubview(stackView)
         
-        stackView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

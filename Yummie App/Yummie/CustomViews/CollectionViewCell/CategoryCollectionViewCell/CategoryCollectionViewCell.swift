@@ -37,19 +37,21 @@ final class CategoryCollectionViewCell: UICollectionViewCell {
         cardView.addSubview(CategoryImageView)
         cardView.addSubview(categoryTitleLabel)
         
-        cardView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        cardView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        cardView.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        
-        CategoryImageView.centerYAnchor.constraint(equalTo: cardView.centerYAnchor).isActive = true
-        CategoryImageView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 8).isActive = true
-        CategoryImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        CategoryImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        NSLayoutConstraint.activate([
+            cardView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            cardView.heightAnchor.constraint(equalToConstant: 56),
+            cardView.widthAnchor.constraint(equalToConstant: 150),
+            
+            CategoryImageView.centerYAnchor.constraint(equalTo: cardView.centerYAnchor),
+            CategoryImageView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 8),
+            CategoryImageView.heightAnchor.constraint(equalToConstant: 40),
+            CategoryImageView.widthAnchor.constraint(equalToConstant: 40),
 
-        categoryTitleLabel.centerYAnchor.constraint(equalTo: CategoryImageView.centerYAnchor).isActive = true
-        categoryTitleLabel.leadingAnchor.constraint(equalTo: CategoryImageView.trailingAnchor, constant: 8).isActive = true
-        categoryTitleLabel.widthAnchor.constraint(equalToConstant: 90).isActive = true
+            categoryTitleLabel.centerYAnchor.constraint(equalTo: CategoryImageView.centerYAnchor),
+            categoryTitleLabel.leadingAnchor.constraint(equalTo: CategoryImageView.trailingAnchor, constant: 8),
+            categoryTitleLabel.widthAnchor.constraint(equalToConstant: 90)
+        ])
     }
     
     override init(frame: CGRect) {

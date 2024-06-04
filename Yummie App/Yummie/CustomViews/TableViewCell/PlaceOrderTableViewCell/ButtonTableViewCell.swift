@@ -46,10 +46,12 @@ class ButtonTableViewCell: UITableViewCell {
         
         contentView.addSubview(button)
         
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        button.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        button.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
-        button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
+        NSLayoutConstraint.activate([
+            button.heightAnchor.constraint(equalToConstant: 50),
+            button.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            button.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
+        ])
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

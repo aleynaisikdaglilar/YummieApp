@@ -28,10 +28,12 @@ class ImageTableViewCell: UITableViewCell {
         
         contentView.addSubview(Image)
         
-        Image.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        Image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        Image.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        Image.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            Image.topAnchor.constraint(equalTo: contentView.topAnchor),
+            Image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            Image.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            Image.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
